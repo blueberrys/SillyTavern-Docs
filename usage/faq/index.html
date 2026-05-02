@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>FAQ | docs.ST.app</title>
     <meta name="title" content="FAQ | docs.ST.app">
-    <meta name="description" content="Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who">
+    <meta name="description" content="Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who you can chat with, write fiction with, etc.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/faq/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/faq/">
     <meta property="og:title" content="FAQ | docs.ST.app">
-    <meta property="og:description" content="Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who">
+    <meta property="og:description" content="Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who you can chat with, write fiction with, etc.">
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
@@ -29,16 +30,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/usage/faq/">
     <meta name="twitter:title" content="FAQ | docs.ST.app">
-    <meta name="twitter:description" content="Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who">
+    <meta name="twitter:description" content="Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who you can chat with, write fiction with, etc.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/usage/faq.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -199,9 +203,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="faq">FAQ</h1>
 <h2 id="explain-what-sillytavern-is-about">Explain what SillyTavern is about</h2>
@@ -258,14 +264,28 @@
 </ol>
 <h2 id="how-can-i-make-my-own-ai-character">How can I make my own AI character?</h2>
 <ol>
-<li>Click the Character Management button</li>
-<li>Click Create New Character</li>
-<li>Under Character Name, give a name, like Amanda</li>
-<li>Optionally, click the Select Avatar button to pick an image portrait for this character</li>
-<li>Under Description, describe the character, and include any information you want that you feel is relevant to the chat. For example: <code translate="no" v-pre>Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period.</code>
-For example, if you want Amanda to be friendly, then you would add: <code translate="no" v-pre>Amanda is extremely cheerful and outgoing.</code></li>
-<li>Under First Message, write the greeting for the character when you begin a new chat. For example: <code translate="no" v-pre>*Amanda waves at you* Hey! Are you a backpacker too?</code></li>
-<li>Click the Create Character button</li>
+<li>
+<p>Click the Character Management button</p>
+</li>
+<li>
+<p>Click Create New Character</p>
+</li>
+<li>
+<p>Under Character Name, give a name, like Amanda</p>
+</li>
+<li>
+<p>Optionally, click the Select Avatar button to pick an image portrait for this character</p>
+</li>
+<li>
+<p>Under Description, describe the character, and include any information you want that you feel is relevant to the chat. For example: <code translate="no" v-pre>Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period.</code>
+For example, if you want Amanda to be friendly, then you would add: <code translate="no" v-pre>Amanda is extremely cheerful and outgoing.</code></p>
+</li>
+<li>
+<p>Under First Message, write the greeting for the character when you begin a new chat. For example: <code translate="no" v-pre>*Amanda waves at you* Hey! Are you a backpacker too?</code></p>
+</li>
+<li>
+<p>Click the Create Character button</p>
+</li>
 </ol>
 <p>You now have a basic character you can chat with. Select Amanda from the character list, and a new chat will begin.</p>
 <p>Note that you can use the Description and/or First Message to create a more specific scenario, and/or include yourself in the description. For example:</p>
@@ -423,6 +443,6 @@ This is usually a problem with locally run models.</p>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "FAQ", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "FAQ", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/faq.md" }</script>
 </body>
 </html>

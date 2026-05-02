@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Speech Recognition | docs.ST.app</title>
@@ -16,6 +16,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/speech-recognition/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -31,15 +32,18 @@
     <meta name="twitter:title" content="Speech Recognition | docs.ST.app">
     <meta name="twitter:description" content="This guide will walk you through setting up speech recognition to transcribe your voice into text within SillyTavern.">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/extensions/speech-recognition.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828224181240" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.831067218304" defer></script>
 
     <style>
         a {
@@ -200,9 +204,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="speech-recognition">Speech Recognition</h1>
 <p>This guide will walk you through setting up speech recognition to transcribe your voice into text within SillyTavern.</p>
@@ -214,14 +220,16 @@
 </ul>
 <h2 id="speech-recognition-setup-browser">Speech Recognition Setup (Browser)</h2>
 <ol>
-<li><p><strong>Configure SillyTavern</strong>:</p>
+<li>
+<p><strong>Configure SillyTavern</strong>:</p>
 <ul>
 <li>Launch SillyTavern and go to <strong>Extensions</strong> &gt; <strong>Speech Recognition</strong>.</li>
 <li>Select &quot;Browser&quot; from the dropdown options.</li>
 <li>If your browser doesn&#x27;t support voice recognition, an error popup will appear.</li>
 </ul>
 </li>
-<li><p><strong>Select Message Mode</strong>:</p>
+<li>
+<p><strong>Select Message Mode</strong>:</p>
 <ul>
 <li>Choose the &quot;Message Mode&quot; you want:
 <ul>
@@ -232,19 +240,22 @@
 </li>
 </ul>
 </li>
-<li><p><strong>Enable Message Mapping</strong> <em>(Optional)</em>:</p>
+<li>
+<p><strong>Enable Message Mapping</strong> <em>(Optional)</em>:</p>
 <ul>
 <li>Setup phrases mapping for vocal shortcuts.</li>
 <li>For instance, by adding &quot;command delete = /del2&quot;, the &quot;/del2&quot; command will replace your voice message when &quot;command delete&quot; is detected.</li>
 <li>Useful when combined with auto send mode for full voice control. Enable this by checking &quot;Enable messages mapping&quot;.</li>
 </ul>
 </li>
-<li><p><strong>Select Language</strong>:</p>
+<li>
+<p><strong>Select Language</strong>:</p>
 <ul>
 <li>Choose the language you want to speak (Note: not every browser supports all languages).</li>
 </ul>
 </li>
-<li><p><strong>Recording</strong>:</p>
+<li>
+<p><strong>Recording</strong>:</p>
 <ul>
 <li>To start recording, click the microphone button to the right of the message area next to the send button. Click again to stop recording. Recording may stop automatically if no voice is detected.</li>
 </ul>
@@ -278,22 +289,23 @@
     </div>
 </div>
 <ol>
-<li><p><strong>Enable Provider</strong>:</p>
+<li>
+<p><strong>Enable Provider</strong>:</p>
 <ul>
-<li><p>Enable the desired speech recognition provider on the extras server using the following command:</p>
+<li>Enable the desired speech recognition provider on the extras server using the following command:
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=whisper-stt</code></pre>
 </doc-codeblock></div>
-<p>or</p>
+or
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=vosk-stt</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>You can also use a custom model by adding the option <code translate="no" v-pre>--stt-vosk-model-path</code> or <code translate="no" v-pre>--stt-whisper-model-path</code> with the path to the model.</p>
-</li>
+<li>You can also use a custom model by adding the option <code translate="no" v-pre>--stt-vosk-model-path</code> or <code translate="no" v-pre>--stt-whisper-model-path</code> with the path to the model.</li>
 </ul>
 </li>
-<li><p><strong>Configure SillyTavern</strong>:</p>
+<li>
+<p><strong>Configure SillyTavern</strong>:</p>
 <ul>
 <li>Launch SillyTavern and go to <strong>Extensions</strong> &gt; <strong>Speech Recognition</strong>.</li>
 <li>Select &quot;Vosk&quot; or &quot;Whisper&quot; from the dropdown options (whisper is more accurate).</li>
@@ -320,16 +332,18 @@
     </div>
 </div>
 <ol>
-<li><p><strong>Enable Provider</strong>:</p>
+<li>
+<p><strong>Enable Provider</strong>:</p>
 <ul>
-<li><p>Enable the streaming speech recognition module on Sillytavern-extras with the following command:</p>
+<li>Enable the streaming speech recognition module on Sillytavern-extras with the following command:
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=streaming-stt</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p><strong>Configure SillyTavern</strong>:</p>
+<li>
+<p><strong>Configure SillyTavern</strong>:</p>
 <ul>
 <li>(Optional) Specify a custom Whisper model as in the Whisper setup above.</li>
 <li>(Optional but recommended) Set up trigger words in SillyTavern. Only messages starting with these trigger words will be sent to SillyTavern as actual messages. This prevents random speech or noise from being transcribed. Enable this with the checkbox. The trigger words can be included/excluded from the actual message using a checkbox.</li>
@@ -410,6 +424,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Speech Recognition", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Speech Recognition", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/speech-recognition.md" }</script>
 </body>
 </html>

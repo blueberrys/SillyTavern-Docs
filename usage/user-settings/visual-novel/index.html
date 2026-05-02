@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Visual Novel (VN) Mode | docs.ST.app</title>
     <meta name="title" content="Visual Novel (VN) Mode | docs.ST.app">
-    <meta name="description" content="Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that">
+    <meta name="description" content="Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that resembles that of a visual novel like Doki Doki Literature Club, The Fruits of Grisaia, Fate: Stay/night and other famous VN games.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/user-settings/visual-novel/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/user-settings/visual-novel/">
     <meta property="og:title" content="Visual Novel (VN) Mode | docs.ST.app">
-    <meta property="og:description" content="Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that">
+    <meta property="og:description" content="Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that resembles that of a visual novel like Doki Doki Literature Club, The Fruits of Grisaia, Fate: Stay/night and other famous VN games.">
     <meta property="og:image" content="https://docs.sillytavern.app/static/vn/vn-mode-toggle.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -33,18 +34,21 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/usage/user-settings/visual-novel/">
     <meta name="twitter:title" content="Visual Novel (VN) Mode | docs.ST.app">
-    <meta name="twitter:description" content="Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that">
+    <meta name="twitter:description" content="Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that resembles that of a visual novel like Doki Doki Literature Club, The Fruits of Grisaia, Fate: Stay/night and other famous VN games.">
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/vn/vn-mode-toggle.png">
     <meta name="twitter:image:alt" content="Visual Novel (VN) Mode | docs.ST.app">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/usage/user_settings/visual-novel.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -205,9 +209,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="visual-novel-vn-mode">Visual Novel (VN) Mode</h1>
 <p>Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that resembles that of a visual novel like Doki Doki Literature Club, The Fruits of Grisaia, Fate: Stay/night and other famous VN games.</p>
@@ -290,7 +296,8 @@
 <h2 id="obtaining-character-sprites">Obtaining Character Sprites</h2>
 <p>Obtaining character sprites can be done by browsing the internet for existing sprites, for say, an existing character from a Visual Novel or a game that uses a Visual Novel feature such as DDLC or CounterSide. If the character you desire sprites from does not come with sprites already, you have several options remaining.</p>
 <ol>
-<li><p>Search the character post for any sprite ZIP package or link to a sprite pack.</p>
+<li>
+<p>Search the character post for any sprite ZIP package or link to a sprite pack.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -309,7 +316,8 @@
     </div>
 </div>
 </li>
-<li><p>Create your own using LoRAs and Stable Diffusion.</p>
+<li>
+<p>Create your own using LoRAs and Stable Diffusion.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -327,7 +335,8 @@
     </div>
 </div>
 </li>
-<li><p>Use the character card image. It might not be like a sprite, but at least you have something to look at on-screen. However, multiple character cards cannot be used in VN mode.</p>
+<li>
+<p>Use the character card image. It might not be like a sprite, but at least you have something to look at on-screen. However, multiple character cards cannot be used in VN mode.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -471,6 +480,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Visual Novel (VN) Mode", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Visual Novel (VN) Mode", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/user_settings/visual-novel.md" }</script>
 </body>
 </html>

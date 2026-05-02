@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Self-hosted AI models | docs.ST.app</title>
     <meta name="title" content="Self-hosted AI models | docs.ST.app">
-    <meta name="description" content="This guide is based on the author's personal experience and knowledge and is not an absolute truth. All statements should be taken with a grain of salt. If">
+    <meta name="description" content="This guide is based on the author's personal experience and knowledge and is not an absolute truth. All statements should be taken with a grain of salt. If you have any corrections or suggestions, please contact us on Discord or send a PR to the SillyTavern documentation repository.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/how-to-use-a-self-hosted-model/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/how-to-use-a-self-hosted-model/">
     <meta property="og:title" content="Self-hosted AI models | docs.ST.app">
-    <meta property="og:description" content="This guide is based on the author's personal experience and knowledge and is not an absolute truth. All statements should be taken with a grain of salt. If">
+    <meta property="og:description" content="This guide is based on the author's personal experience and knowledge and is not an absolute truth. All statements should be taken with a grain of salt. If you have any corrections or suggestions, please contact us on Discord or send a PR to the SillyTavern documentation repository.">
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
@@ -29,16 +30,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/usage/how-to-use-a-self-hosted-model/">
     <meta name="twitter:title" content="Self-hosted AI models | docs.ST.app">
-    <meta name="twitter:description" content="This guide is based on the author's personal experience and knowledge and is not an absolute truth. All statements should be taken with a grain of salt. If">
+    <meta name="twitter:description" content="This guide is based on the author's personal experience and knowledge and is not an absolute truth. All statements should be taken with a grain of salt. If you have any corrections or suggestions, please contact us on Discord or send a PR to the SillyTavern documentation repository.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/usage/api_connections/self-hosted.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -199,9 +203,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="self-hosted-ai-models">Self-hosted AI models</h1>
 <div class="flex mb-6">
@@ -288,16 +294,34 @@
 </div>
 <h3 id="downloading-and-using-koboldcpp-no-installation-required-gguf-models">Downloading and using KoboldCpp (No installation required, GGUF models)</h3>
 <ol>
-<li>Visit <a href="https://koboldai.org/cpp">https://koboldai.org/cpp</a> where you will see the latest version with various files you can download.
-At the time of writing the newest CUDA version they list is cu12 which will work best on modern Nvidia GPUs, if you have an older GPU or a different brand you can use the regular koboldcpp.exe. If you have an old CPU its possible that KoboldCpp will crash when you try to load models, in that case try the _oldcpu version to see if it resolves your issue.</li>
-<li>KoboldCpp does not need to be installed, once you start KoboldCpp you will immediately be able to select your GGUF model such as the one linked above using the Browse button next to the Model field.</li>
-<li>By default KoboldCpp runs at a maximum of 4K context even if you set this higher in SillyTavern, if you wish to run a model at higher context make sure to adjust the context slider on this screen before launching the model. Keep in mind that more context size means higher (video) memory requirements, if you set this too high or load a model that is too big for your system KoboldCpp will automatically begin using your CPU for the layers it can not fit on your GPU, this will be much slower.</li>
-<li>Click Launch, if everything goes well a new webpage will open with KoboldAI Lite where you can test if everything works correctly.</li>
-<li>Open SillyTavern and click API Connections (2nd button in the top bar)</li>
-<li>Set API to Text Completion and the API Type to KoboldCpp.</li>
-<li>Set server URL to <a href="http://127.0.0.1:5001/">http://127.0.0.1:5001/</a> or the link that KoboldCpp gave you in case it is not running on the same system (You can activate KoboldCpp&#x27;s Remote Tunnel mode to obtain a link that can be accessed from anywhere).</li>
-<li>Click Connect. It should connect successfully and detect kunoichi-dpo-v2-7b.Q6_K.gguf as the model.</li>
-<li>Chat with a character to test that it works.</li>
+<li>
+<p>Visit <a href="https://koboldai.org/cpp">https://koboldai.org/cpp</a> where you will see the latest version with various files you can download.
+At the time of writing the newest CUDA version they list is cu12 which will work best on modern Nvidia GPUs, if you have an older GPU or a different brand you can use the regular koboldcpp.exe. If you have an old CPU its possible that KoboldCpp will crash when you try to load models, in that case try the _oldcpu version to see if it resolves your issue.</p>
+</li>
+<li>
+<p>KoboldCpp does not need to be installed, once you start KoboldCpp you will immediately be able to select your GGUF model such as the one linked above using the Browse button next to the Model field.</p>
+</li>
+<li>
+<p>By default KoboldCpp runs at a maximum of 4K context even if you set this higher in SillyTavern, if you wish to run a model at higher context make sure to adjust the context slider on this screen before launching the model. Keep in mind that more context size means higher (video) memory requirements, if you set this too high or load a model that is too big for your system KoboldCpp will automatically begin using your CPU for the layers it can not fit on your GPU, this will be much slower.</p>
+</li>
+<li>
+<p>Click Launch, if everything goes well a new webpage will open with KoboldAI Lite where you can test if everything works correctly.</p>
+</li>
+<li>
+<p>Open SillyTavern and click API Connections (2nd button in the top bar)</p>
+</li>
+<li>
+<p>Set API to Text Completion and the API Type to KoboldCpp.</p>
+</li>
+<li>
+<p>Set server URL to <a href="http://127.0.0.1:5001/">http://127.0.0.1:5001/</a> or the link that KoboldCpp gave you in case it is not running on the same system (You can activate KoboldCpp&#x27;s Remote Tunnel mode to obtain a link that can be accessed from anywhere).</p>
+</li>
+<li>
+<p>Click Connect. It should connect successfully and detect kunoichi-dpo-v2-7b.Q6_K.gguf as the model.</p>
+</li>
+<li>
+<p>Chat with a character to test that it works.</p>
+</li>
 </ol>
 <h3 id="tips-for-optimizing-koboldcpps-speed">Tips for Optimizing KoboldCpp&#x27;s speed</h3>
 <ol>
@@ -427,6 +451,6 @@ At the time of writing the newest CUDA version they list is cu12 which will work
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Self-hosted AI models", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Self-hosted AI models", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/api_connections/self-hosted.md" }</script>
 </body>
 </html>

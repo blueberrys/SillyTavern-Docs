@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Docker Installation | docs.ST.app</title>
     <meta name="title" content="Docker Installation | docs.ST.app">
-    <meta name="description" content="These instructions assume you have installed Docker, are able to access your command line for the installation of containers, and familiar with their">
+    <meta name="description" content="These instructions assume you have installed Docker, are able to access your command line for the installation of containers, and familiar with their general operation.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/installation/docker/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/installation/docker/">
     <meta property="og:title" content="Docker Installation | docs.ST.app">
-    <meta property="og:description" content="These instructions assume you have installed Docker, are able to access your command line for the installation of containers, and familiar with their">
+    <meta property="og:description" content="These instructions assume you have installed Docker, are able to access your command line for the installation of containers, and familiar with their general operation.">
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
@@ -29,17 +30,20 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/installation/docker/">
     <meta name="twitter:title" content="Docker Installation | docs.ST.app">
-    <meta name="twitter:description" content="These instructions assume you have installed Docker, are able to access your command line for the installation of containers, and familiar with their">
+    <meta name="twitter:description" content="These instructions assume you have installed Docker, are able to access your command line for the installation of containers, and familiar with their general operation.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/installation/docker.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828224181240" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.831067218304" defer></script>
 
     <style>
         a {
@@ -200,9 +204,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="docker-installation">Docker Installation</h1>
 <div class="flex mb-6">
@@ -311,7 +317,7 @@ docker run \
 <p>If you want to build the Docker image yourself, you can do so by following these steps. This is useful if you want to customize the image or use it for development purposes.</p>
 <h3 id="linux">Linux</h3>
 <ol>
-<li><p>Install Docker by following the Docker installation guide <a href="https://docs.docker.com/engine/install/">here</a>.</p>
+<li>Install Docker by following the Docker installation guide <a href="https://docs.docker.com/engine/install/">here</a>.
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -330,40 +336,48 @@ docker run \
 </div>
 </li>
 <li>Follow the steps in <strong>Manage Docker as a non-root user</strong> in the Docker <a href="https://docs.docker.com/engine/install/linux-postinstall/">Post-Installation Guide</a>.</li>
-<li>Install <a href="https://git-scm.com/download/linux">Git</a> using your package manager.
+<li>
+<p>Install <a href="https://git-scm.com/download/linux">Git</a> using your package manager.</p>
 <ul>
-<li><p>Debian (Ubuntu/Pop! OS/etc.)</p>
+<li>
+<p>Debian (Ubuntu/Pop! OS/etc.)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt install git</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Arch Linux (Manjaro/EndeavourOS/etc.)</p>
+<li>
+<p>Arch Linux (Manjaro/EndeavourOS/etc.)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo pacman -S git</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Fedora, Red Hat Enterprise Linux (RHEL), etc.</p>
+<li>
+<p>Fedora, Red Hat Enterprise Linux (RHEL), etc.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo dnf install git</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li>Clone the SillyTavern repository.
+<li>
+<p>Clone the SillyTavern repository.</p>
 <ul>
-<li><p>Release (Stable Branch)</p>
+<li>
+<p>Release (Stable Branch)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Staging (Development Branch)</p>
+<li>
+<p>Staging (Development Branch)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>Execute <code translate="no" v-pre>docker compose</code> by running the following command within the Docker folder.</p>
+<li>
+<p>Execute <code translate="no" v-pre>docker compose</code> by running the following command within the Docker folder.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
@@ -392,21 +406,25 @@ docker run \
 <ol>
 <li>Install Docker Desktop by following the Docker installation guide <a href="https://docs.docker.com/desktop/setup/install/windows-install/">here</a>.</li>
 <li>Install <a href="https://git-scm.com/download/win">Git for Windows</a>.</li>
-<li>Clone the SillyTavern repository.
+<li>
+<p>Clone the SillyTavern repository.</p>
 <ul>
-<li><p>Release (Stable Branch)</p>
+<li>
+<p>Release (Stable Branch)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Staging (Development Branch)</p>
+<li>
+<p>Staging (Development Branch)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>Execute <code translate="no" v-pre>docker compose</code> by running the following command within the Docker folder.</p>
+<li>
+<p>Execute <code translate="no" v-pre>docker compose</code> by running the following command within the Docker folder.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
@@ -434,26 +452,31 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
 </div>
 <ol>
 <li>Install Docker Desktop by following the Docker installation guide <a href="https://docs.docker.com/desktop/setup/install/mac-install/">here</a>.</li>
-<li><p>Install <code translate="no" v-pre>git</code> using Homebrew.</p>
+<li>
+<p>Install <code translate="no" v-pre>git</code> using Homebrew.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">brew install git</code></pre>
 </doc-codeblock></div>
 </li>
-<li>Clone the SillyTavern repository.
+<li>
+<p>Clone the SillyTavern repository.</p>
 <ul>
-<li><p>Release (Stable Branch)</p>
+<li>
+<p>Release (Stable Branch)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Staging (Development Branch)</p>
+<li>
+<p>Staging (Development Branch)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>Execute <code translate="no" v-pre>docker compose</code> by running the following command within the Docker folder.</p>
+<li>
+<p>Execute <code translate="no" v-pre>docker compose</code> by running the following command within the Docker folder.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
@@ -504,7 +527,8 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
     </div>
 </div>
 <ol>
-<li><p>Using <code translate="no" v-pre>nano</code> or a code editor, open <em>docker-compose.yml</em> and add the following line below <code translate="no" v-pre>volumes</code>.</p>
+<li>
+<p>Using <code translate="no" v-pre>nano</code> or a code editor, open <em>docker-compose.yml</em> and add the following line below <code translate="no" v-pre>volumes</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">    volumes:
         - &quot;./config:/home/node/app/config&quot;
@@ -514,12 +538,14 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
 </li>
 <li>Create a new folder within the <code translate="no" v-pre>docker</code> folder called <em>plugins</em>.</li>
 <li>Follow your plugin&#x27;s instructions on installing the plugin.</li>
-<li><p>Using <code translate="no" v-pre>nano</code> or a code editor with administrator rights, open <em>config.yaml</em> (within the <code translate="no" v-pre>config</code> folder) and enable <code translate="no" v-pre>enableServerPlugins</code></p>
+<li>
+<p>Using <code translate="no" v-pre>nano</code> or a code editor with administrator rights, open <em>config.yaml</em> (within the <code translate="no" v-pre>config</code> folder) and enable <code translate="no" v-pre>enableServerPlugins</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">enableServerPlugins: true</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Restart the Docker container.</p>
+<li>
+<p>Restart the Docker container.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
@@ -620,13 +646,15 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
 <h3 id="disabling-the-healthcheck">Disabling the healthcheck</h3>
 <p>If you don&#x27;t need the healthcheck feature, you can disable it by:</p>
 <ol>
-<li><p>Setting the environment variable to <code translate="no" v-pre>0</code>:</p>
+<li>
+<p>Setting the environment variable to <code translate="no" v-pre>0</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">environment:
   - SILLYTAVERN_HEARTBEATINTERVAL=0</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Removing or commenting out the <code translate="no" v-pre>healthcheck</code> section in your <code translate="no" v-pre>docker-compose.yml</code>.</p>
+<li>
+<p>Removing or commenting out the <code translate="no" v-pre>healthcheck</code> section in your <code translate="no" v-pre>docker-compose.yml</code>.</p>
 </li>
 </ol>
 <h2 id="common-issues-with-docker">Common issues with Docker</h2>
@@ -670,7 +698,8 @@ Failed to resolve whitelist hostname gateway.docker.internal: getaddrinfo ENOTFO
     </div>
 </div>
 <ol>
-<li><p>Execute the following Docker command to obtain the IP of your SillyTavern Docker container.</p>
+<li>
+<p>Execute the following Docker command to obtain the IP of your SillyTavern Docker container.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
 </doc-codeblock></div>
@@ -692,7 +721,8 @@ Failed to resolve whitelist hostname gateway.docker.internal: getaddrinfo ENOTFO
 </doc-codeblock></div>
 <p>Copy down the IP you see in <em>Gateway</em> as this will be important.</p>
 </li>
-<li><p>Running a text editor of your choice with administrator rights, go to <code translate="no" v-pre>config</code> and open <code translate="no" v-pre>config.yaml</code>.</p>
+<li>
+<p>Running a text editor of your choice with administrator rights, go to <code translate="no" v-pre>config</code> and open <code translate="no" v-pre>config.yaml</code>.</p>
 <p>Within your editor, go down to the <code translate="no" v-pre>whitelist</code> section. You should see something similar to the following below.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
@@ -723,7 +753,8 @@ Failed to resolve whitelist hostname gateway.docker.internal: getaddrinfo ENOTFO
     </div>
 </div>
 </li>
-<li><p>Restart the Docker Container to apply the new configuration.</p>
+<li>
+<p>Restart the Docker Container to apply the new configuration.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
@@ -801,6 +832,6 @@ Failed to resolve whitelist hostname gateway.docker.internal: getaddrinfo ENOTFO
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Docker", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Docker", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/installation/docker.md" }</script>
 </body>
 </html>

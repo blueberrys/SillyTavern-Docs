@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Characters | docs.ST.app</title>
     <meta name="title" content="Characters | docs.ST.app">
-    <meta name="description" content="Characters are the AI identities that you can create and manage to shape the AI's role in the conversation. Each character has a name, personality, and">
+    <meta name="description" content="Characters are the AI identities that you can create and manage to shape the AI's role in the conversation. Each character has a name, personality, and conversation history.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/characters/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/characters/">
     <meta property="og:title" content="Characters | docs.ST.app">
-    <meta property="og:description" content="Characters are the AI identities that you can create and manage to shape the AI's role in the conversation. Each character has a name, personality, and">
+    <meta property="og:description" content="Characters are the AI identities that you can create and manage to shape the AI's role in the conversation. Each character has a name, personality, and conversation history.">
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
@@ -29,16 +30,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/usage/characters/">
     <meta name="twitter:title" content="Characters | docs.ST.app">
-    <meta name="twitter:description" content="Characters are the AI identities that you can create and manage to shape the AI's role in the conversation. Each character has a name, personality, and">
+    <meta name="twitter:description" content="Characters are the AI identities that you can create and manage to shape the AI's role in the conversation. Each character has a name, personality, and conversation history.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/usage/characters/index.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -199,9 +203,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="characters">Characters</h1>
 <p>Characters are the AI identities that you can create and manage to shape the AI&#x27;s role in the conversation. Each
@@ -287,10 +293,12 @@ choose <i class="fa-solid fa-user-plus"></i> <strong>Create New Character</stron
 <p>Click on the <i class="fa-solid fa-book"></i> <strong>Advanced Definitions</strong> button to access the extended character settings.</p>
 <h4 id="prompt-overrides-chat-completioninstruct-mode">Prompt Overrides (Chat Completion/Instruct Mode)</h4>
 <ul>
-<li><p><strong>Main Prompt</strong>: Replaces default <a href="../prompts/#main-prompt-system-prompt">main/system prompt</a>, can use
+<li>
+<p><strong>Main Prompt</strong>: Replaces default <a href="../prompts/#main-prompt-system-prompt">main/system prompt</a>, can use
 {{original}} placeholder to include the original prompt</p>
 </li>
-<li><p><strong>Post-History Instructions</strong>: Overrides
+<li>
+<p><strong>Post-History Instructions</strong>: Overrides
 default <a href="../prompts/#post-history-instructions">post-history instructions</a></p>
 </li>
 </ul>
@@ -304,12 +312,22 @@ default <a href="../prompts/#post-history-instructions">post-history instruction
 </ul>
 <h4 id="character-personality">Character Personality</h4>
 <ul>
-<li><strong><a href="../core-concepts/characterdesign/#personality-summary">Personality Summary</a></strong>: Brief overview of character&#x27;s traits</li>
-<li><strong><a href="../core-concepts/characterdesign/#scenario">Scenario</a></strong>: Context and circumstances of the dialog</li>
-<li><strong>Character&#x27;s Note</strong>: Custom message with selectable depth and message role (also
-see <a href="../core-concepts/authors-note/">Author&#x27;s Note</a>)</li>
-<li><strong>Talkativeness</strong> (Group Chats): Slider for Shy → Normal → Chatty</li>
-<li><strong>Example Messages</strong>: Examples of character&#x27;s writing style</li>
+<li>
+<p><strong><a href="../core-concepts/characterdesign/#personality-summary">Personality Summary</a></strong>: Brief overview of character&#x27;s traits</p>
+</li>
+<li>
+<p><strong><a href="../core-concepts/characterdesign/#scenario">Scenario</a></strong>: Context and circumstances of the dialog</p>
+</li>
+<li>
+<p><strong>Character&#x27;s Note</strong>: Custom message with selectable depth and message role (also
+see <a href="../core-concepts/authors-note/">Author&#x27;s Note</a>)</p>
+</li>
+<li>
+<p><strong>Talkativeness</strong> (Group Chats): Slider for Shy → Normal → Chatty</p>
+</li>
+<li>
+<p><strong>Example Messages</strong>: Examples of character&#x27;s writing style</p>
+</li>
 </ul>
 <h3 id="group-chat-management">Group Chat Management</h3>
 <p>If this is a group chat, you can manage the group members and settings from this panel.</p>
@@ -386,6 +404,6 @@ see <a href="../core-concepts/authors-note/">Author&#x27;s Note</a>)</li>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Characters", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Characters", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/characters/index.md" }</script>
 </body>
 </html>

@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>VRM | docs.ST.app</title>
     <meta name="title" content="VRM | docs.ST.app">
-    <meta name="description" content="This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to">
+    <meta name="description" content="This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to use VRM animated models for your character, providing a dynamic and interactive element to your virtual character.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/vrm/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/vrm/">
     <meta property="og:title" content="VRM | docs.ST.app">
-    <meta property="og:description" content="This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to">
+    <meta property="og:description" content="This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to use VRM animated models for your character, providing a dynamic and interactive element to your virtual character.">
     <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/vrm-global.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -33,18 +34,21 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/vrm/">
     <meta name="twitter:title" content="VRM | docs.ST.app">
-    <meta name="twitter:description" content="This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to">
+    <meta name="twitter:description" content="This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to use VRM animated models for your character, providing a dynamic and interactive element to your virtual character.">
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/vrm-global.png">
     <meta name="twitter:image:alt" content="VRM | docs.ST.app">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/extensions/vrm.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -205,20 +209,25 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="vrm">VRM</h1>
 <p>This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to use VRM animated models for your character, providing a dynamic and interactive element to your virtual character.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
 <ol>
-<li><p><strong>Branch Selection</strong>: Make sure you&#x27;re using the latest version branch of SillyTavern to access the latest features and updates.</p>
+<li>
+<p><strong>Branch Selection</strong>: Make sure you&#x27;re using the latest version branch of SillyTavern to access the latest features and updates.</p>
 </li>
-<li><p><strong>Extension Installation</strong>: Install the &quot;VRM&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (represented by the stacked blocks icon).</p>
+<li>
+<p><strong>Extension Installation</strong>: Install the &quot;VRM&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (represented by the stacked blocks icon).</p>
 </li>
-<li><p><strong>Model Folder Placement</strong>: Place your VRM model files (.vrm) into the <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/vrm/model</code> directory and your animation files into the <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/vrm/animation</code> directory. The currently supported animation file formats are .fbx and .bvh that are compatible with VRM models. This includes any animation you can get from Mixamo (<a href="https://www.mixamo.com/">https://www.mixamo.com/</a>) and any animation you can export from tools like XR Animator (<a href="https://github.com/ButzYung/SystemAnimatorOnline">https://github.com/ButzYung/SystemAnimatorOnline</a>).</p>
+<li>
+<p><strong>Model Folder Placement</strong>: Place your VRM model files (.vrm) into the <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/vrm/model</code> directory and your animation files into the <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/vrm/animation</code> directory. The currently supported animation file formats are .fbx and .bvh that are compatible with VRM models. This includes any animation you can get from Mixamo (<a href="https://www.mixamo.com/">https://www.mixamo.com/</a>) and any animation you can export from tools like XR Animator (<a href="https://github.com/ButzYung/SystemAnimatorOnline">https://github.com/ButzYung/SystemAnimatorOnline</a>).</p>
 </li>
 </ol>
 <h2 id="extension-settings">Extension Settings</h2>
@@ -229,18 +238,21 @@
 </figure>
 <h3 id="global-settings">Global Settings</h3>
 <ol>
-<li><p><strong>Enabled</strong>:</p>
+<li>
+<p><strong>Enabled</strong>:</p>
 <ul>
 <li>Enable this checkbox to activate the extension, allowing your VRM model to interact within SillyTavern.</li>
 <li>You can disable the extension if you want to use normal sprites only.</li>
 </ul>
 </li>
-<li><p><strong>Look at camera</strong>:</p>
+<li>
+<p><strong>Look at camera</strong>:</p>
 <ul>
 <li>Enable this checkbox to make the VRM model eyes look at the camera.</li>
 </ul>
 </li>
-<li><p><strong>Blink</strong>:</p>
+<li>
+<p><strong>Blink</strong>:</p>
 <ul>
 <li>Enable this checkbox to make the VRM model eyes blink at random intervals. Model expressions should define properly blinking weight property otherwise model can blink with closed eyes for example, if that happens either:</li>
 <li>correct the model if you have the .vroid file</li>
@@ -248,12 +260,14 @@
 <li>disable blinking completely with this checkbox</li>
 </ul>
 </li>
-<li><p><strong>TTS Lip sync</strong></p>
+<li>
+<p><strong>TTS Lip sync</strong></p>
 <ul>
 <li>Enable this checkbox to have the VRM mouth movement follow the sound of your TTS when it&#x27;s played. Only works with TTS whose sound is played by Sillytavern itself like XTTS (not in streaming mode). If disabled, mouth will be animated according to the message text length when a new character message is received.</li>
 </ul>
 </li>
-<li><p><strong>Auto-send Interaction</strong>:</p>
+<li>
+<p><strong>Auto-send Interaction</strong>:</p>
 <ul>
 <li>Enable this checkbox to automatically trigger character interactions when you click on areas with mapped messages (refer to the hit areas section for details).</li>
 </ul>
@@ -261,17 +275,20 @@
 </ol>
 <h3 id="performance-settings">Performance Settings</h3>
 <ol>
-<li><p><strong>Body hitboxes</strong></p>
+<li>
+<p><strong>Body hitboxes</strong></p>
 <ul>
 <li>Enable this checkbox to activate detection of click on several part of the VRM model depending on the model the following area can be detected: head/chest/hands/groin/butt/legs/feet. Hitbox locations are computed at each frame and follow the body animation, disabling this option can improve performance.</li>
 </ul>
 </li>
-<li><p><strong>Use model cache</strong></p>
+<li>
+<p><strong>Use model cache</strong></p>
 <ul>
 <li>Enable this checkbox to keep the VRM model in memory when switching models, allows to switch back to previous model faster. Useful if you use different model for the same character to change outfit or form for example. Can affect performance.</li>
 </ul>
 </li>
-<li><p><strong>Use animation cache</strong></p>
+<li>
+<p><strong>Use animation cache</strong></p>
 <ul>
 <li>Enable this checkbox to keep in memory all animations played during the session. All animation assigned to a model will also be loaded the first time the model appears. Will increase the time you load the model the first time but make all animation switch instant. Can affect performance.</li>
 </ul>
@@ -279,12 +296,14 @@
 </ol>
 <h3 id="debug-settings">Debug Settings</h3>
 <ol>
-<li><p><strong>Show grid</strong></p>
+<li>
+<p><strong>Show grid</strong></p>
 <ul>
 <li>Enable this checkbox to visualize the 3d grid, model dragging box and body hitboxes.</li>
 </ul>
 </li>
-<li><p><strong>Reload button</strong></p>
+<li>
+<p><strong>Reload button</strong></p>
 <ul>
 <li>Click this button to reload the 3d scene, clear the cache and all VRM models. Use it if some bug occurs or if cache starts to hit performance.</li>
 </ul>
@@ -296,12 +315,14 @@
     <figcaption class="caption">UI scene settings</figcaption>
 </figure>
 <ol>
-<li><p><strong>Light Color</strong></p>
+<li>
+<p><strong>Light Color</strong></p>
 <ul>
 <li>Set the color of the light in the 3d scene. Click on the reset button to set it back to the default white color. Depending on your browser you can use a color picker, for example you can color pick the color of your background image to add more immersion.</li>
 </ul>
 </li>
-<li><p><strong>Light intensity</strong></p>
+<li>
+<p><strong>Light intensity</strong></p>
 <ul>
 <li>Set the light intensity in percent using the slider. Click on the reset button to set it back to the default value of 100%. VRM model can react differently to light depending on the baked shaders into the model, play with the value and see how it goes.</li>
 </ul>
@@ -314,17 +335,20 @@
 <h2 id="character-selection">Character Selection</h2>
 <p>These settings allow you to manage characters and assign VRM models to them.</p>
 <ol>
-<li><p><strong>Refresh Button</strong>:</p>
+<li>
+<p><strong>Refresh Button</strong>:</p>
 <ul>
 <li>Click the refresh button to update the list of characters in the current chat.</li>
 </ul>
 </li>
-<li><p><strong>Select Character</strong>:</p>
+<li>
+<p><strong>Select Character</strong>:</p>
 <ul>
 <li>Use the drop-down list to choose a character to assign a VRM model to.</li>
 </ul>
 </li>
-<li><p><strong>Remove Button</strong>:</p>
+<li>
+<p><strong>Remove Button</strong>:</p>
 <ul>
 <li>Click this button to delete the assigned model for a character.</li>
 </ul>
@@ -332,18 +356,21 @@
 </ol>
 <h2 id="model-selection">Model Selection</h2>
 <ol>
-<li><p><strong>Refresh Button</strong>:</p>
+<li>
+<p><strong>Refresh Button</strong>:</p>
 <ul>
 <li>Click the refresh button if your VRM model does not appear in the list.</li>
 </ul>
 </li>
-<li><p><strong>Select Model</strong>:</p>
+<li>
+<p><strong>Select Model</strong>:</p>
 <ul>
 <li>Choose a model from the list to assign it to the selected character.</li>
 <li>The model has to be located in <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/vrm/model</code> directory.</li>
 </ul>
 </li>
-<li><p><strong>Reset button</strong></p>
+<li>
+<p><strong>Reset button</strong></p>
 <ul>
 <li>Click this button to reset the model settings to its default. If you have animation files that correspond to the default value they will be auto mapped. See the naming mapping at the end of this README.</li>
 </ul>
@@ -351,17 +378,20 @@
 </ol>
 <h2 id="model-settings">Model Settings</h2>
 <ol>
-<li><p><strong>Model Scale</strong>:</p>
+<li>
+<p><strong>Model Scale</strong>:</p>
 <ul>
 <li>Use the slider to adjust the size of the model, making it larger or smaller.</li>
 </ul>
 </li>
-<li><p><strong>Model Center X/Y Offset</strong>:</p>
+<li>
+<p><strong>Model Center X/Y Offset</strong>:</p>
 <ul>
 <li>Use those sliders to change the horizontal/vertical position of the model relative to the window center.</li>
 </ul>
 </li>
-<li><p><strong>Model X/Y Rotation</strong></p>
+<li>
+<p><strong>Model X/Y Rotation</strong></p>
 <ul>
 <li>Use those sliders to change the horizontal/vertical rotation of the model relative to the model hips.</li>
 </ul>
@@ -388,12 +418,14 @@
 </figure>
 <h2 id="classified-expressions-mapping">Classified Expressions Mapping</h2>
 <ol>
-<li><p><strong>Requirements</strong></p>
+<li>
+<p><strong>Requirements</strong></p>
 <ul>
 <li>Requires the use of the classify expression extension; otherwise, it will fall back to the default animation.</li>
 </ul>
 </li>
-<li><p><strong>Mapping</strong></p>
+<li>
+<p><strong>Mapping</strong></p>
 <ul>
 <li>For each detected emotion by the classify extension, you can assign an expression/motion/message. The message can contain commands.</li>
 </ul>
@@ -566,6 +598,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "VRM", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "VRM", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/vrm.md" }</script>
 </body>
 </html>

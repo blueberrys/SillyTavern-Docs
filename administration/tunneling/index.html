@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>VPNs and Tunneling | docs.ST.app</title>
     <meta name="title" content="VPNs and Tunneling | docs.ST.app">
-    <meta name="description" content="VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access">
+    <meta name="description" content="VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access your SillyTavern instance from anywhere.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/administration/tunneling/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/administration/tunneling/">
     <meta property="og:title" content="VPNs and Tunneling | docs.ST.app">
-    <meta property="og:description" content="VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access">
+    <meta property="og:description" content="VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access your SillyTavern instance from anywhere.">
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
@@ -29,16 +30,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/administration/tunneling/">
     <meta name="twitter:title" content="VPNs and Tunneling | docs.ST.app">
-    <meta name="twitter:description" content="VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access">
+    <meta name="twitter:description" content="VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access your SillyTavern instance from anywhere.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/administration/tunneling.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -199,25 +203,31 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="vpns-and-tunneling">VPNs and Tunneling</h1>
 <p>VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access your SillyTavern instance from anywhere.</p>
 <h2 id="methods">Methods</h2>
 <ol>
-<li><p>Use a <strong>home-made VPN</strong>.</p>
+<li>
+<p>Use a <strong>home-made VPN</strong>.</p>
 <p>Several routers come with the ability to host a VPN server (primarily OpenVPN or WireGuard) in the router administration page. Refer to your router&#x27;s manual to setup a VPN and add your devices to the VPN. Once connected, just go to the private IP you have set for SillyTavern and you can connect just fine. Easier for users and for Windows use.</p>
 </li>
-<li><p>Use <a href="https://developers.cloudflare.com/cloudflare-one/"><strong>Cloudflare Zero Trust</strong></a>.</p>
+<li>
+<p>Use <a href="https://developers.cloudflare.com/cloudflare-one/"><strong>Cloudflare Zero Trust</strong></a>.</p>
 <p>Cloudflare Zero Trust is a free organizational feature in Cloudflare that allows you to add 50 users. This will proxy your traffic through Cloudflare and by adding your ST PC as a tunnel using <code translate="no" v-pre>cloudflared</code>, you can connect to your ST instance as if you were home.</p>
 <p>Do note that after making a tunnel, you will have to add a route to your router&#x27;s private IP addresses and calculate IP CIDR values to have full local access on the go using Cloudflare Zero Trust.</p>
 </li>
-<li><p>Use a standalone <strong>Cloudflare</strong> or <strong><a href="https://ngrok.com">ngrok</a></strong> tunnel.</p>
+<li>
+<p>Use a standalone <strong>Cloudflare</strong> or <strong><a href="https://ngrok.com">ngrok</a></strong> tunnel.</p>
 <p>Similar to how AI backends can connect, you can also connect your ST instance via a Cloudflare Tunnel and open the Cloudflare Tunnel page. However, you will have to copy and paste each new link generated by Cloudflare/NGROK each time you want to use ST on-the-go.</p>
 </li>
-<li><p>Use <strong>Tailscale</strong>.</p>
+<li>
+<p>Use <strong>Tailscale</strong>.</p>
 <p>Tailscale is a VPN provider enabling a secure remote connection to your PC.</p>
 </li>
 </ol>
@@ -328,6 +338,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "VPNs and Tunneling", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "VPNs and Tunneling", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/administration/tunneling.md" }</script>
 </body>
 </html>

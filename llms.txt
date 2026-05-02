@@ -1,0 +1,130 @@
+﻿#  | docs.ST.app
+
+> SillyTavern - LLM Frontend for Power Users
+
+- [What is SillyTavern?](https://docs.sillytavern.app/readme.md): What is SillyTavern?
+- [Installation](https://docs.sillytavern.app/installation/index.md): Follow the installation guide for your platform:
+- [Usage](https://docs.sillytavern.app/usage/index.md): Interact with AI, your way. Build your world, your work, or your dreams.
+- [Extensions](https://docs.sillytavern.app/extensions/index.md): SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel. Extensions can add new features, change the behavior of existing features, or provide additional content for your AI to use.
+- [Development and Automation](https://docs.sillytavern.app/for_contributors/index.md): SillyTavern's default package only provides a barebones platform that can be extended in a multitude of ways.
+- [Administration](https://docs.sillytavern.app/administration/index.md): Despite following many security best practices, the SillyTavern server is not secure enough for exposure to the public internet.
+- [License and credits](https://docs.sillytavern.app/licensecredits.md): This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+## Installation
+
+- [Windows Installation](https://docs.sillytavern.app/installation/windows.md): DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).
+- [Linux/MacOS Install](https://docs.sillytavern.app/installation/linuxmacos.md): For MacOS / Linux all of these will be done in a Terminal.
+- [Android (Termux) Installation](https://docs.sillytavern.app/installation/android.md): SillyTavern can be run natively on Android devices using Termux.
+- [Docker Installation](https://docs.sillytavern.app/installation/docker.md): These instructions assume you have installed Docker, are able to access your command line for the installation of containers, and familiar with their general operation.
+
+### Updating
+
+- [How to Update SillyTavern](https://docs.sillytavern.app/installation/updating/index.md): Find your OS below and follow the instructions to update ST.
+- [1.12.0 Migration Guide](https://docs.sillytavern.app/installation/updating/st-1.12.0-migration-guide.md): SillyTavern 1.12.0 (codename the "Neo Server" update) includes several critical changes that may affect the way you use SillyTavern.
+- [1.9.0 Migration Guide](https://docs.sillytavern.app/installation/updating/migration-guide-1-09.md): It is recommended to do a fresh install. However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.
+- [How to update Node.js](https://docs.sillytavern.app/installation/updating/node.md): It's important to keep your Node.js runtime up to date for security and performance reasons. Below are the steps to update Node.js depending on your operating system.
+
+## Usage
+
+- [Quick Start](https://docs.sillytavern.app/usage/quick-start.md): I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern. -- Anonymous
+- [FAQ](https://docs.sillytavern.app/usage/faq.md): Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who you can chat with, write fiction with, etc.
+
+### Chatting
+
+- [Chatting](https://docs.sillytavern.app/usage/chatting/index.md): When you are connected to an API, send messages to the AI by typing in the chat bar at the bottom of the screen. Then click Send or press Enter. Chat bar
+- [Slash commands](https://docs.sillytavern.app/usage/chatting/slashcommands.md): This is not an exhaustive list as it is updated rarely.
+- [HotKeys](https://docs.sillytavern.app/usage/chatting/hotkeys.md): For the most up-to-date list of HotKeys that will work in your SillyTavern instance, use the /help hotkeys slash command in any chat.
+- [Common Settings](https://docs.sillytavern.app/usage/common-settings.md): These settings control the sampling process when generating text using a language model. The meaning of these settings is universal for all the supported backends.
+
+### API Connections
+
+- [API Connections](https://docs.sillytavern.app/usage/api_connections/index.md): SillyTavern can connect to a wide range of LLM APIs. Below is a description of their respective strengths, weaknesses, and use cases.
+- [Connection Profiles](https://docs.sillytavern.app/usage/api_connections/connection-profiles.md): Save Connection Profiles to quickly switch between different APIs, models and formatting templates. This is useful when you actively use multiple API connections or need to switch between different configurations without surfing through the menus.
+- [Self-hosted AI models](https://docs.sillytavern.app/usage/api_connections/self-hosted.md): This guide is based on the author's personal experience and knowledge and is not an absolute truth. All statements should be taken with a grain of salt. If you have any corrections or suggestions, please contact us on Discord or send a PR to the SillyTavern documentation repository.
+- [Chat Completions](https://docs.sillytavern.app/usage/api_connections/openai.md): Most API platforms allow you to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new key. Make sure to keep it safe!
+- [OpenRouter](https://docs.sillytavern.app/usage/api_connections/openrouter.md): OpenRouter is available as both a Text Completion and Chat Completion source. All models are available through either API, but their features may differ depending on the API type you choose.
+- [AI Horde](https://docs.sillytavern.app/usage/api_connections/horde.md): AI Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.
+- [DreamGen](https://docs.sillytavern.app/usage/api_connections/dreamgen.md): DreamGen is an app and an API for AI-powered role-playing and story-writing. They have a free tier, as well as a paid subscription that allows unlimited
+- [Google Gemini](https://docs.sillytavern.app/usage/api_connections/google.md): Gemini is Google's cutting-edge multimodal LLM, which is available through several APIs, including Google Vertex AI and Google AI Studio (formerly MakerSuite).
+- [KoboldCpp](https://docs.sillytavern.app/usage/api_connections/koboldcpp.md): KoboldCpp is a self-contained API for GGML and GGUF models.
+- [Mancer](https://docs.sillytavern.app/usage/api_connections/mancer.md): Mancer is a large language model inferencing service that lets you run whatever prompts you want and doesn't censor responses. Most of the models require a preloaded balance to start chatting, but there is a free model as of writing (2024-11-28).
+- [NovelAI](https://docs.sillytavern.app/usage/api_connections/novelai.md): NovelAI is a paid subscription service that allows unlimited monthly access to their high-quality in-house text generation, image generation, and text-to-speech models.
+- [TabbyAPI](https://docs.sillytavern.app/usage/api_connections/tabbyapi.md): A FastAPI based application that allows for generating text using an LLM using the Exllamav2 backend, with support for Exl2, GPTQ, and FP16 models.
+
+### Prompts
+
+- [Prompts](https://docs.sillytavern.app/usage/prompts/index.md): When you send a message to your AI, the text you write is combined with other text to form a single request that's sent to the AI. This combined text is
+- [Advanced Formatting](https://docs.sillytavern.app/usage/prompts/advancedformatting.md): The settings provided in this section allow for more control over the prompt-building strategy, primarily for Text Completion APIs.
+- [Context Template](https://docs.sillytavern.app/usage/prompts/context-template.md): For equivalent settings in Chat Completion APIs, use Prompt Manager.
+- [Instruct Mode](https://docs.sillytavern.app/usage/prompts/instructmode.md): Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2, etc.
+- [Tokenizer](https://docs.sillytavern.app/usage/prompts/tokenizer.md): A tokenizer is a tool that breaks down a piece of text into smaller units called tokens. These tokens can be individual words or even parts of words, such as prefixes, suffixes, or punctuation.
+- [CFG](https://docs.sillytavern.app/usage/prompts/cfg.md): Page written by: kingbri
+- [Prompt Manager](https://docs.sillytavern.app/usage/prompts/prompt-manager.md): The Prompt Manager is a system that provides more control over the prompt-building strategy for Chat Completion APIs.
+- [Reasoning](https://docs.sillytavern.app/usage/prompts/reasoning.md): In language models, reasoning (also known as model thinking) refers to a chain-of-thought (CoT) technique that mirrors human problem-solving through step-by-step analysis.
+- [Macros](https://docs.sillytavern.app/usage/macros.md): The Experimental Macro Engine supports nesting, stable substitution order, and other improvements. It is enabled by default for new installations. Existing installations can enable it in User Settings > Chat/Message Handling > Experimental Macro Engine.
+- [World Info](https://docs.sillytavern.app/usage/worldinfo.md): World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide the AI replies.
+
+### User Settings
+
+- [User Settings](https://docs.sillytavern.app/usage/user_settings/index.md): UI Customization
+- [UI Customization](https://docs.sillytavern.app/usage/user_settings/uicustomization.md): Theme files allow you to save, share, and reuse your UI customizations. You can maintain multiple themes for different moods or purposes, and switch between them instantly.
+- [Visual Novel (VN) Mode](https://docs.sillytavern.app/usage/user_settings/visual-novel.md): Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that resembles that of a visual novel like Doki Doki Literature Club, The Fruits of Grisaia, Fate: Stay/night and other famous VN games.
+- [Personas](https://docs.sillytavern.app/usage/personas.md): A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive text.
+
+### Characters
+
+- [Characters](https://docs.sillytavern.app/usage/characters/index.md): Characters are the AI identities that you can create and manage to shape the AI's role in the conversation. Each character has a name, personality, and conversation history.
+- [Character Design](https://docs.sillytavern.app/usage/characters/characterdesign.md): Character Name is the only required field. You can leave the rest empty and still use the character in chats.
+- [Chat File Management](https://docs.sillytavern.app/usage/characters/chatfilemanagement.md): This page describes the ways you can manage your AI chat files.
+- [Group Chats](https://docs.sillytavern.app/usage/characters/groupchats.md): Decides how characters in group chats are drafted for their replies.
+- [Tags](https://docs.sillytavern.app/usage/characters/tags.md): Character cards and groups can be assigned zero or more tags. They are useful to organize quickly growing collections by themes, quality, provenance or whatever you like.
+- [Author's Note](https://docs.sillytavern.app/usage/characters/authors-note.md): Author's Note is a powerful tool for customizing AI responses which inserts a section of text into the prompt at any position and at any frequency you desire.
+- [Data Bank (RAG)](https://docs.sillytavern.app/usage/characters/data-bank.md): Retrieval-augmented generation (RAG) is a technique for providing external sources of knowledge to the LLM. It helps improve the accuracy of AI answers by accessing information outside of the model's training data.
+- [Welcome Page Assistants](https://docs.sillytavern.app/usage/welcome-assistants.md): SillyTavern features a Welcome Screen that can greet you with a designated "Assistant" character. This screen appears when you launch SillyTavern without an active chat or after you close your last chat session.
+
+## Extensions
+
+- [Blip](https://docs.sillytavern.app/extensions/blip.md): This guide will walk you through setting up and customizing blip extension for your SillyTavern experience. This extension animates the text of messages with variable speed and plays sound along the animation.
+- [Character Expressions](https://docs.sillytavern.app/extensions/expression-images.md): Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.
+- [Chat Translation](https://docs.sillytavern.app/extensions/translation.md): The Chat Translation Extension enables real-time translation of chat messages between different languages using various translation providers. It supports both manual and automatic translation modes.
+- [Chat Vectorization](https://docs.sillytavern.app/extensions/chat-vectorization.md): The use of this extension does not guarantee a better chatting experience or improved memory of any sort. Only use if you understand all the implications of vector database utilization.
+- [Dynamic Audio](https://docs.sillytavern.app/extensions/dynamic-audio.md): This guide will walk you through setting up and customizing dynamic audio assets for your SillyTavern experience.
+- [EmulatorJS](https://docs.sillytavern.app/extensions/emulatorjs.md): This extension allows you to play retro console games right from the SillyTavern chat.
+- [Image Captioning](https://docs.sillytavern.app/extensions/captioning.md): Image Captioning allows SillyTavern to automatically generate text descriptions for images used in chats.
+- [Image Generation](https://docs.sillytavern.app/extensions/stable-diffusion.md): Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.
+- [Live2D](https://docs.sillytavern.app/extensions/live2d.md): This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you to use Live2D animated models for your character, providing a dynamic and interactive element to your virtual character.
+- [Objective](https://docs.sillytavern.app/extensions/objective.md): The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step tasks.
+- [Regex](https://docs.sillytavern.app/extensions/regex.md): The Regex extension lets the user automatically detect specific patterns in a string of text (called 'sequences') and apply manipulations (replacements) to them.
+- [Retrieval-based Voice Conversion (RVC)](https://docs.sillytavern.app/extensions/rvc.md): This guide will walk you through using RVC, a technique that allows transferring voice features from one audio clip to another, enabling voices to speak in different tones and styles.
+- [Speech Recognition](https://docs.sillytavern.app/extensions/speech-recognition.md): This guide will walk you through setting up speech recognition to transcribe your voice into text within SillyTavern.
+- [Summarize](https://docs.sillytavern.app/extensions/summarize.md): This extension allows you to create, store, and utilize automatically generated summaries based on the events happening in your chats. Summarization can
+- [TTS](https://docs.sillytavern.app/extensions/tts.md): SillyTavern has a wide range of TTS (text-to-speech) options that are used to have a voice narrate parts of your chat. This page explains the setup and use.
+- [AllTalk TTS V2](https://docs.sillytavern.app/extensions/alltalk.md): AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction (either zero shot voice cloning or built-in voices).
+- [MiniMax TTS](https://docs.sillytavern.app/extensions/minimaxtts.md): This page will teach you how to properly use the MiniMax TTS provider.
+- [XTTS with voice cloning](https://docs.sillytavern.app/extensions/xtts.md): Greetings! So, you've been blown away by those Reddit posts showcasing how far the technology went for the AI text-to-speech?
+- [VRM](https://docs.sillytavern.app/extensions/vrm.md): This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to use VRM animated models for your character, providing a dynamic and interactive element to your virtual character.
+- [Web Search](https://docs.sillytavern.app/extensions/websearch.md): Adds web search results to LLM prompts.
+
+### Extras
+
+- [Extras](https://docs.sillytavern.app/extensions/extras/index.md): The Extras project was discontinued in April 2024 and won't receive any new updates or modules. The vast majority of modules are available natively in the main SillyTavern application.
+- [Extras Installation](https://docs.sillytavern.app/extensions/extras/installation.md): This page contains instructions for installing SillyTavern Extras on your local device.
+- [Smart Context](https://docs.sillytavern.app/extensions/extras/smart-context.md): The use of this extension does not guarantee a better chatting experience or improved memory of any sort. Only use if you understand all the implications of vector database utilization.
+- [talkinghead](https://docs.sillytavern.app/extensions/extras/talkinghead.md): THE SUPPORT FOR TALKINGHEAD WAS DROPPED IN SILLYTAVERN 1.12.13. THIS PAGE IS KEPT FOR HISTORICAL PURPOSES.
+
+## Development and Automation
+
+- [STscript Language Reference](https://docs.sillytavern.app/for_contributors/st-script.md): It's a simple yet powerful scripting language that could be used to expand the functionality of SillyTavern without serious coding, allowing you to:
+- [Function Calling](https://docs.sillytavern.app/for_contributors/function-calling.md): Function Calling allows adding dynamic functionality to your extensions by letting the LLM use structured data that you then can use to trigger a specific functionality of the extension.
+- [UI Extensions](https://docs.sillytavern.app/for_contributors/writing-extensions.md): UI extensions expand SillyTavern's functionality by hooking into its events and API. They run in a browser context and have practically unrestricted access to the DOM, JavaScript APIs, and the SillyTavern context.
+- [Server Plugins](https://docs.sillytavern.app/for_contributors/server-plugins.md): These plugins allow for adding functionality that is impossible to achieve using UI extensions alone, such as creating new API endpoints or using Node.JS packages that are unavailable in a browser environment.
+- [Internationalization (i18n)](https://docs.sillytavern.app/for_contributors/i18n.md): SillyTavern supports multiple languages. This guide explains how to add and manage translations.
+
+## Administration
+
+- [Configuration File](https://docs.sillytavern.app/administration/config-yaml.md): This documentation may be obsolete, incomplete, or incorrect. Please refer to the default config.yaml in your installation for the most up-to-date list of settings.
+- [Multi-user mode](https://docs.sillytavern.app/administration/multi-user.md): Multi-user mode allows several people to use one SillyTavern server. Each user has their own settings, extensions, and data. User accounts can also be password-protected.
+- [Single Sign-On (SSO)](https://docs.sillytavern.app/administration/sso.md): SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure. While it is complex to setup, it is a good way to both learn SSO and secure your ST instance out on the internet more.
+- [Remote connections](https://docs.sillytavern.app/administration/remote-connections.md): Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server within the same WiFi network.
+- [VPNs and Tunneling](https://docs.sillytavern.app/administration/tunneling.md): VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access your SillyTavern instance from anywhere.
+- [Reverse proxying](https://docs.sillytavern.app/administration/reverse-proxying.md): This section does not refer to OpenAI/Claude reverse proxies. This refers exclusively to HTTP/HTTPS Reverse Proxies.

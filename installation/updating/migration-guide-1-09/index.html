@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>1.9.0 Migration Guide | docs.ST.app</title>
@@ -16,6 +16,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/installation/updating/migration-guide-1-09/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -31,14 +32,17 @@
     <meta name="twitter:title" content="1.9.0 Migration Guide | docs.ST.app">
     <meta name="twitter:description" content="It is recommended to do a fresh install. However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/installation/updating/migration-guide-1-09.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -199,9 +203,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="190-migration-guide">1.9.0 Migration Guide</h1>
 <h2 id="how-to-migrate-to-a-new-branch-if-i-use-maindev">How to migrate to a new branch if I use main/dev?</h2>
@@ -213,16 +219,15 @@
 <li>Open a terminal prompt (cmd, PowerShell, Termux, etc) in your SillyTavern installation folder.</li>
 <li>Type <code translate="no" v-pre>git fetch</code> and then <code translate="no" v-pre>git pull</code> to pull the updates.</li>
 <li>You may lose your settings. Have you made a backup? <code translate="no" v-pre>git switch release</code> or <code translate="no" v-pre>git switch staging</code> will change your branch, respectively</li>
-<li><p>Skip to next item if you have no errors. You may have something like:</p>
+<li>Skip to next item if you have no errors. You may have something like:
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">error: Your local changes to the following files would be overwritten by checkout:
      config.conf
      public/css/bg_load.css
      public/settings.json</code></pre>
 </doc-codeblock></div>
-<p>You will see a list of files affected. If you do not care about those settings files being replaced <code translate="no" v-pre>git switch -f release</code> or <code translate="no" v-pre>git switch -f staging</code> will set your branch.
-If you do care to save those changes restore from backup.</p>
-</li>
+You will see a list of files affected. If you do not care about those settings files being replaced <code translate="no" v-pre>git switch -f release</code> or <code translate="no" v-pre>git switch -f staging</code> will set your branch.
+If you do care to save those changes restore from backup.</li>
 <li>Type <code translate="no" v-pre>npm install</code> and then <code translate="no" v-pre>npm run start</code> to test that everything behaves correctly.</li>
 <li>Enjoy! Restore your data from a backup if needed.</li>
 </ol>
@@ -308,6 +313,6 @@ git checkout -t st/release</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "1.9.0 Migration Guide", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "1.9.0 Migration Guide", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/installation/updating/migration-guide-1-09.md" }</script>
 </body>
 </html>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>CFG | docs.ST.app</title>
@@ -16,6 +16,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/prompts/cfg/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -37,14 +38,17 @@
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/cfg-hamburger.png">
     <meta name="twitter:image:alt" content="CFG | docs.ST.app">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/usage/prompts/cfg.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -205,9 +209,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="cfg">CFG</h1>
 <p>Page written by: kingbri</p>
@@ -232,22 +238,26 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
 </figure>
 <p>There are four dropdowns in the CFG panel:</p>
 <ul>
-<li>Chat CFG
+<li>
+<p>Chat CFG</p>
 <ul>
 <li>Scopes the CFG scale and prompts to only this chat</li>
 </ul>
 </li>
-<li>Character CFG
+<li>
+<p>Character CFG</p>
 <ul>
 <li>Scopes the CFG scale and prompts to the specified character</li>
 </ul>
 </li>
-<li>Global CFG
+<li>
+<p>Global CFG</p>
 <ul>
 <li>Globally overrides the CFG scale and prompts (also overrides the model preset!)</li>
 </ul>
 </li>
-<li>CFG Advanced Settings (formerly called CFG Prompt Cascading)
+<li>
+<p>CFG Advanced Settings (formerly called CFG Prompt Cascading)</p>
 <ul>
 <li>A place to combine prompts from the previous 3 dropdowns and set insertion depth.</li>
 </ul>
@@ -274,9 +284,11 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
 </figure>
 <p>If you want to know more about CFG and LLMs, Vermifuge&#x27;s original paper is located here. I&#x27;d suggest giving it a read/listen:</p>
 <ul>
-<li><p>Paper - <a href="https://arxiv.org/abs//2306.17806">[2306.17806] Stay on topic with Classifier-Free Guidance (arxiv.org)</a></p>
+<li>
+<p>Paper - <a href="https://arxiv.org/abs//2306.17806">[2306.17806] Stay on topic with Classifier-Free Guidance (arxiv.org)</a></p>
 </li>
-<li><p>Audio version - <a href="https://www.youtube.com/watch?v=MGY00YFcyco">https://www.youtube.com/watch?v=MGY00YFcyco</a></p>
+<li>
+<p>Audio version - <a href="https://www.youtube.com/watch?v=MGY00YFcyco">https://www.youtube.com/watch?v=MGY00YFcyco</a></p>
 </li>
 </ul>
 <h3 id="do-i-need-cfg-prompts">Do I need CFG prompts?</h3>
@@ -373,6 +385,6 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "CFG", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "CFG", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/prompts/cfg.md" }</script>
 </body>
 </html>

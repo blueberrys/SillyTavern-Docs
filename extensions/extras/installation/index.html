@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Extras Installation | docs.ST.app</title>
@@ -16,6 +16,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/extras/installation/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -37,14 +38,17 @@
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/sd-user.png">
     <meta name="twitter:image:alt" content="Extras Installation | docs.ST.app">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/extensions/extras/installation.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -205,9 +209,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="extras-installation">Extras Installation</h1>
 <p>This page contains instructions for installing SillyTavern Extras on your local device.</p>
@@ -265,30 +271,38 @@
 <h3 id="miniconda-recommended">MiniConda (recommended)</h3>
 <p>This method is recommended because Conda makes a &#x27;virtual environment&#x27; for the Extras requirement packages to live inside, so they do not affect your system-wide Python setup.</p>
 <ol>
-<li><p>Install <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p>
+<li>
+<p>Install <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p>
 <p><em>(Important!) Read <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">how to use Conda</a></em></p>
 </li>
-<li><p>Install <a href="https://git-scm.com/downloads">git</a></p>
+<li>
+<p>Install <a href="https://git-scm.com/downloads">git</a></p>
 <p><em>(Chads who installed SillyTavern with git to begin with can skip this step!)</em></p>
 <p>After you have both of them installed...</p>
 <p>Type/paste the commands below <code translate="no" v-pre>ONE BY ONE</code> IN THE <code translate="no" v-pre>CONDA COMMAND PROMPT WINDOW</code> and hit <code translate="no" v-pre>Enter</code> after each one.</p>
 </li>
-<li><p>Create a new Conda environment (let&#x27;s call it <code translate="no" v-pre>extras</code>):</p>
+<li>
+<p>Create a new Conda environment (let&#x27;s call it <code translate="no" v-pre>extras</code>):</p>
 <p><code translate="no" v-pre>conda create -n extras</code></p>
 </li>
-<li><p>Activate the new environment</p>
+<li>
+<p>Activate the new environment</p>
 <p><code translate="no" v-pre>conda activate extras</code> (you should see <code translate="no" v-pre>(extras)</code> pop up on the left side of your command prompt)</p>
 </li>
-<li><p>Install the required system packages (this will take some time)</p>
+<li>
+<p>Install the required system packages (this will take some time)</p>
 <p><code translate="no" v-pre>conda install python=3.11 git</code></p>
 </li>
-<li><p>Clone the Extras GitHub repo</p>
+<li>
+<p>Clone the Extras GitHub repo</p>
 <p><code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code></p>
 </li>
-<li><p>Navigate to your cloned Extras repo</p>
+<li>
+<p>Navigate to your cloned Extras repo</p>
 <p><code translate="no" v-pre>cd SillyTavern-extras</code></p>
 </li>
-<li><p>Install Extras&#x27; requirements by using <strong>one</strong> of the following commands (will take time, again):</p>
+<li>
+<p>Install Extras&#x27; requirements by using <strong>one</strong> of the following commands (will take time, again):</p>
 <ul>
 <li><code translate="no" v-pre>pip install -r requirements.txt</code> - for basic features</li>
 <li><code translate="no" v-pre>pip install -r requirements-rvc.txt</code> - for real-time voice cloning</li>
@@ -296,7 +310,8 @@
 </ul>
 <p>See the <doc-anchor-trigger to="#extras-install-common-problems">Common Problems</doc-anchor-trigger> page if you get errors at this step!</p>
 </li>
-<li><p>See below &#x27;Running Extras After Install&#x27;</p>
+<li>
+<p>See below &#x27;Running Extras After Install&#x27;</p>
 </li>
 </ol>
 <hr>
@@ -413,7 +428,8 @@
 <li>A new file will appear on your Desktop, asking for a name.</li>
 <li>Name the file <code translate="no" v-pre>STExtras.txt</code></li>
 <li>Open the newly created file in a text editor.</li>
-<li><p>Paste the following code into it:</p>
+<li>
+<p>Paste the following code into it:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">cd C:\_your_\_full_\_Extras_\_folder_\_path_\
 call conda activate extras
@@ -568,6 +584,6 @@ pause</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Local Installation", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Local Installation", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/extras/installation.md" }</script>
 </body>
 </html>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Character Expressions | docs.ST.app</title>
@@ -16,6 +16,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/expression-images/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -37,14 +38,17 @@
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/expression-drawer.png">
     <meta name="twitter:image:alt" content="Character Expressions | docs.ST.app">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/extensions/expression-images.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -205,9 +209,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="character-expressions">Character Expressions</h1>
 <h2 id="what-is-it">What is it?</h2>
@@ -215,14 +221,20 @@
 <p>Expression images can automatically change based on a classification, adjusting to the sentiment expressed in the AI&#x27;s most recent chat response.</p>
 <h2 id="adding-character-expression-images">Adding Character Expression Images</h2>
 <ol>
-<li>Open the Extensions Panel and expand the &#x27;Character Expressions&#x27; section. If you have the character chat open, you will see a grid of image placeholders.
+<li>
+<p>Open the Extensions Panel and expand the &#x27;Character Expressions&#x27; section. If you have the character chat open, you will see a grid of image placeholders.
 <figure class="content-center">
     <img src="../../static/extensions/expression-drawer.png" alt="Expression Drawer" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="997" height="615" />
     <figcaption class="caption">Expression Drawer</figcaption>
 </figure>
+</p>
 </li>
-<li>Click the &#x27;Upload image&#x27; button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the <code translate="no" v-pre>/data/&lt;user-handle&gt;/characters/(character_name_here)/</code> folder.</li>
-<li>Repeat this for all expressions you want to assign an image to.</li>
+<li>
+<p>Click the &#x27;Upload image&#x27; button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the <code translate="no" v-pre>/data/&lt;user-handle&gt;/characters/(character_name_here)/</code> folder.</p>
+</li>
+<li>
+<p>Repeat this for all expressions you want to assign an image to.</p>
+</li>
 </ol>
 <h3 id="importing-an-expression-images-zip-file">Importing an Expression images ZIP file</h3>
 <p>Using the &#x27;<i class="fa-solid fa-file-zipper"></i> Upload sprite pack (ZIP)&#x27; button, you can import a zip file that contains a collection of expression images, and those images will automatically be added to the correct folder for your <strong>currently selected character</strong>. The ZIP file must contain all images in a flat structure (no subfolders) and correctly named files. Importing a zip will not automatically rename any images to make them match the emotions.</p>
@@ -438,6 +450,6 @@ Folder overrides can also be used to define different sprite sets (outfits, etc.
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Character Expressions", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Character Expressions", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/expression-images.md" }</script>
 </body>
 </html>

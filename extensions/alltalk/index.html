@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>AllTalk TTS V2 | docs.ST.app</title>
     <meta name="title" content="AllTalk TTS V2 | docs.ST.app">
-    <meta name="description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction">
+    <meta name="description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction (either zero shot voice cloning or built-in voices).">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/alltalk/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/alltalk/">
     <meta property="og:title" content="AllTalk TTS V2 | docs.ST.app">
-    <meta property="og:description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction">
+    <meta property="og:description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction (either zero shot voice cloning or built-in voices).">
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
@@ -29,16 +30,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/alltalk/">
     <meta name="twitter:title" content="AllTalk TTS V2 | docs.ST.app">
-    <meta name="twitter:description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction">
+    <meta name="twitter:description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction (either zero shot voice cloning or built-in voices).">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/extensions/alltalk.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -199,9 +203,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="alltalk-tts-v2">AllTalk TTS V2</h1>
 <p>AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction (either zero shot voice cloning or built-in voices). In AllTalk V2, significant updates enhance functionality and ease of use, including multiple TTS engine support, expanded customization, and performance optimizations. For a comprehensive list of features, refer to the <a href="https://github.com/erew123/alltalk_tts/wiki">AllTalk Wiki here</a>.</p>
@@ -332,6 +338,6 @@ Once the SillyTavern-Launcher is installed:</p>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "AllTalk TTS V2", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "AllTalk TTS V2", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/alltalk.md" }</script>
 </body>
 </html>

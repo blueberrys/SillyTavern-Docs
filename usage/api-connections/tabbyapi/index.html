@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>TabbyAPI | docs.ST.app</title>
@@ -16,6 +16,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/api-connections/tabbyapi/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -37,14 +38,17 @@
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/tabby-terminal.png">
     <meta name="twitter:image:alt" content="TabbyAPI | docs.ST.app">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/usage/api_connections/tabbyapi.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -205,9 +209,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="tabbyapi">TabbyAPI</h1>
 <p>A FastAPI based application that allows for generating text using an LLM using the Exllamav2 backend, with support for Exl2, GPTQ, and FP16 models.</p>
@@ -216,13 +222,22 @@
 </ul>
 <h3 id="quickstart">Quickstart</h3>
 <ol>
-<li>Follow the <a href="https://github.com/theroyallab/tabbyAPI/wiki/01.-Getting-Started">installation instructions</a> on the official TabbyAPI GitHub.</li>
-<li><a href="https://github.com/theroyallab/tabbyAPI/wiki/02.-Server-options">Create your config.yml</a> to set your model path, default model, sequence length, etc. You can ignore most (if not all) of these settings if you want.</li>
-<li><p>Launch TabbyAPI. If it worked, you should see something like this:</p>
+<li>
+<p>Follow the <a href="https://github.com/theroyallab/tabbyAPI/wiki/01.-Getting-Started">installation instructions</a> on the official TabbyAPI GitHub.</p>
+</li>
+<li>
+<p><a href="https://github.com/theroyallab/tabbyAPI/wiki/02.-Server-options">Create your config.yml</a> to set your model path, default model, sequence length, etc. You can ignore most (if not all) of these settings if you want.</p>
+</li>
+<li>
+<p>Launch TabbyAPI. If it worked, you should see something like this:</p>
 <p><img src="../../../static/tabby-terminal.png" alt="TabbyAPI terminal" class="max-w-full h-auto" width="849" height="357" /></p>
 </li>
-<li>Under the Text Completion API in SillyTavern, select TabbyAPI.</li>
-<li>Copy your API key from the TabbyAPI terminal into <code translate="no" v-pre>Tabby API key</code> and make sure your <code translate="no" v-pre>API URL</code> is correct (it should be <code translate="no" v-pre>http://127.0.0.1:5000</code> by default).</li>
+<li>
+<p>Under the Text Completion API in SillyTavern, select TabbyAPI.</p>
+</li>
+<li>
+<p>Copy your API key from the TabbyAPI terminal into <code translate="no" v-pre>Tabby API key</code> and make sure your <code translate="no" v-pre>API URL</code> is correct (it should be <code translate="no" v-pre>http://127.0.0.1:5000</code> by default).</p>
+</li>
 </ol>
 <p>If you did everything correctly, you should see something like this in SillyTavern:</p>
 <figure class="content-center">
@@ -233,13 +248,22 @@
 <h3 id="tabbyapi-loader">TabbyAPI Loader</h3>
 <p>The developers of TabbyAPI created an official extension to load/unload models directly from SillyTavern. Installation is simple:</p>
 <ol>
-<li>In SillyTavern, click on the Extensions tab and navigate to Download Extensions &amp; Assets.</li>
-<li>Copy <code translate="no" v-pre>https://raw.githubusercontent.com/theroyallab/ST-repo/main/index.json</code> into Assets URL and click the plug button to the right.</li>
-<li><p>You should see something like this. Click the download button next to Tabby Loader.</p>
+<li>
+<p>In SillyTavern, click on the Extensions tab and navigate to Download Extensions &amp; Assets.</p>
+</li>
+<li>
+<p>Copy <code translate="no" v-pre>https://raw.githubusercontent.com/theroyallab/ST-repo/main/index.json</code> into Assets URL and click the plug button to the right.</p>
+</li>
+<li>
+<p>You should see something like this. Click the download button next to Tabby Loader.</p>
 <p><img src="../../../static/tabby-assets.png" alt="Tabby Loader" class="max-w-full h-auto" width="672" height="257" /></p>
 </li>
-<li>If the installation was successful, you should see a green pop-up message at the top of your screen. Under the extensions tab, navigate to TabbyAPI Loader and copy your admin key from the TabbyAPI terminal into Admin Key.</li>
-<li>Click the refresh button next to Model Select. When you click on the textbox just below it, you should see all of the models in your model directory.</li>
+<li>
+<p>If the installation was successful, you should see a green pop-up message at the top of your screen. Under the extensions tab, navigate to TabbyAPI Loader and copy your admin key from the TabbyAPI terminal into Admin Key.</p>
+</li>
+<li>
+<p>Click the refresh button next to Model Select. When you click on the textbox just below it, you should see all of the models in your model directory.</p>
+</li>
 </ol>
 <figure class="content-center">
     <img src="../../../static/tabby-loader.png" alt="Tabby Loader Extension" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="670" height="412" />
@@ -320,6 +344,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "TabbyAPI", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "TabbyAPI", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/api_connections/tabbyapi.md" }</script>
 </body>
 </html>

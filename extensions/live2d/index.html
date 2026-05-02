@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Live2D | docs.ST.app</title>
     <meta name="title" content="Live2D | docs.ST.app">
-    <meta name="description" content="This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you">
+    <meta name="description" content="This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you to use Live2D animated models for your character, providing a dynamic and interactive element to your virtual character.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/live2d/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/live2d/">
     <meta property="og:title" content="Live2D | docs.ST.app">
-    <meta property="og:description" content="This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you">
+    <meta property="og:description" content="This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you to use Live2D animated models for your character, providing a dynamic and interactive element to your virtual character.">
     <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/live2d-folder.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -33,18 +34,21 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/live2d/">
     <meta name="twitter:title" content="Live2D | docs.ST.app">
-    <meta name="twitter:description" content="This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you">
+    <meta name="twitter:description" content="This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you to use Live2D animated models for your character, providing a dynamic and interactive element to your virtual character.">
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/live2d-folder.png">
     <meta name="twitter:image:alt" content="Live2D | docs.ST.app">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/extensions/live2d.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -205,20 +209,25 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="live2d">Live2D</h1>
 <p>This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you to use Live2D animated models for your character, providing a dynamic and interactive element to your virtual character.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
 <ol>
-<li><p><strong>Branch Selection</strong>: Make sure you&#x27;re using the latest version of SillyTavern to access the latest features and updates.</p>
+<li>
+<p><strong>Branch Selection</strong>: Make sure you&#x27;re using the latest version of SillyTavern to access the latest features and updates.</p>
 </li>
-<li><p><strong>Extension Installation</strong>: Install the &quot;Live2D&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (represented by the stacked blocks icon).</p>
+<li>
+<p><strong>Extension Installation</strong>: Install the &quot;Live2D&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (represented by the stacked blocks icon).</p>
 </li>
-<li><p><strong>Model Folder Placement</strong>: Place your Live2D model folders into the <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/live2d</code> directory. A properly organized <code translate="no" v-pre>live2d</code> assets folder might look like this:</p>
+<li>
+<p><strong>Model Folder Placement</strong>: Place your Live2D model folders into the <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/live2d</code> directory. A properly organized <code translate="no" v-pre>live2d</code> assets folder might look like this:</p>
 <p><img src="../../static/extensions/live2d-folder.png" alt="Asset folder example" class="max-w-full h-auto" width="132" height="161" /></p>
 <ul>
 <li>A Live2D model folder should include all necessary components for the Live2D model, such as expressions, motions, textures, sounds, and settings files. Notably the <code translate="no" v-pre>***.model.json</code> file must be at the root of the Live2D model folder for the model to be detected by the extension. In this example the <code translate="no" v-pre>shizuku</code> live2d model folder may look like this:</li>
@@ -237,19 +246,22 @@
 </figure>
 <h3 id="global-settings">Global Settings</h3>
 <ol>
-<li><p><strong>Enabled</strong>:</p>
+<li>
+<p><strong>Enabled</strong>:</p>
 <ul>
 <li>Enable this checkbox to activate the extension, allowing your Live2D model to interact within SillyTavern.</li>
 <li>You can disable the extension if you want to use normal sprites only.</li>
 <li>You can disable the extension when you want to move normal sprites in a group chat and enable it again when you&#x27;re ready to use Live2D models.</li>
 </ul>
 </li>
-<li><p><strong>Follow Cursor</strong>:</p>
+<li>
+<p><strong>Follow Cursor</strong>:</p>
 <ul>
 <li>Enable this checkbox to make the Live2D model follow your cursor, provided that the model supports this feature.</li>
 </ul>
 </li>
-<li><p><strong>Auto-send Interaction</strong>:</p>
+<li>
+<p><strong>Auto-send Interaction</strong>:</p>
 <ul>
 <li>Enable this checkbox to automatically trigger character interactions when you click on areas with mapped messages (refer to the hit areas section for details).</li>
 </ul>
@@ -258,17 +270,20 @@
 <h2 id="debug-settings">Debug Settings</h2>
 <p>These settings help you control the behavior and visibility of your Live2D model for debugging purposes.</p>
 <ol>
-<li><p><strong>Reset Model Before Animation</strong>:</p>
+<li>
+<p><strong>Reset Model Before Animation</strong>:</p>
 <ul>
 <li>Enable this checkbox to reload the model before any animation. This forces the animation to start and allows you to spam clicks if necessary. Some models may require this to ensure that animations begin from a compatible state.</li>
 </ul>
 </li>
-<li><p><strong>Show Model Frames</strong>:</p>
+<li>
+<p><strong>Show Model Frames</strong>:</p>
 <ul>
 <li>Enable this checkbox to display the model frame, making it easier to identify where to click to drag the model around. It also shows the hit area, if available. Hovering over a hit area will show its name.</li>
 </ul>
 </li>
-<li><p><strong>Reload button</strong></p>
+<li>
+<p><strong>Reload button</strong></p>
 <ul>
 <li>Click this button to reload every live2d model. Use it in case something glitches.</li>
 </ul>
@@ -277,17 +292,20 @@
 <h2 id="character-selection">Character Selection</h2>
 <p>These settings allow you to manage characters and assign Live2D models to them.</p>
 <ol>
-<li><p><strong>Refresh Button</strong>:</p>
+<li>
+<p><strong>Refresh Button</strong>:</p>
 <ul>
 <li>Click the refresh button to update the list of characters in the current chat.</li>
 </ul>
 </li>
-<li><p><strong>Select Character</strong>:</p>
+<li>
+<p><strong>Select Character</strong>:</p>
 <ul>
 <li>Use the drop-down list to choose a character to assign a Live2D model to.</li>
 </ul>
 </li>
-<li><p><strong>Remove Button</strong>:</p>
+<li>
+<p><strong>Remove Button</strong>:</p>
 <ul>
 <li>Click this button to delete all assigned models for a character. A confirmation prompt will appear to confirm the deletion.</li>
 </ul>
@@ -299,12 +317,14 @@
     <figcaption class="caption">UI model list</figcaption>
 </figure>
 <ol>
-<li><p><strong>Refresh Button</strong>:</p>
+<li>
+<p><strong>Refresh Button</strong>:</p>
 <ul>
 <li>Click the refresh button if your Live2D model does not appear in the list.</li>
 </ul>
 </li>
-<li><p><strong>Select Model</strong>:</p>
+<li>
+<p><strong>Select Model</strong>:</p>
 <ul>
 <li>Choose a model from the list to assign it to the selected character.</li>
 <li>The model can be located in the asset folder or the current character&#x27;s folder.</li>
@@ -321,17 +341,20 @@
     <figcaption class="caption">UI model settings</figcaption>
 </figure>
 <ol>
-<li><p><strong>Model Scale</strong>:</p>
+<li>
+<p><strong>Model Scale</strong>:</p>
 <ul>
 <li>Use the slider to adjust the size of the model, making it larger or smaller.</li>
 </ul>
 </li>
-<li><p><strong>Model Center X Offset</strong>:</p>
+<li>
+<p><strong>Model Center X Offset</strong>:</p>
 <ul>
 <li>Use the slider to change the horizontal position of the model relative to the window center.</li>
 </ul>
 </li>
-<li><p><strong>Model Center Y Offset</strong>:</p>
+<li>
+<p><strong>Model Center Y Offset</strong>:</p>
 <ul>
 <li>Use the slider to adjust the vertical position of the model relative to the window center.</li>
 </ul>
@@ -349,17 +372,20 @@
     <figcaption class="caption">UI model talk</figcaption>
 </figure>
 <ol>
-<li><p><strong>Param mouth open Y id</strong></p>
+<li>
+<p><strong>Param mouth open Y id</strong></p>
 <ul>
 <li>Select from the list the ID of the parameter corresponding to the model&#x27;s mouth Y value. Not all models have one, and names may vary from model to model. Usually something like &quot;PARAM_MOUTH_OPEN_Y&quot; or &quot;ParamMouthOpenY&quot;. Check the model when selecting an element from the list; it will try to run the speak animation. If the mouth moves, you got it!</li>
 </ul>
 </li>
-<li><p><strong>Mouth movement speed</strong></p>
+<li>
+<p><strong>Mouth movement speed</strong></p>
 <ul>
 <li>Adjust the slider to change the movement speed of the mouth animation.</li>
 </ul>
 </li>
-<li><p><strong>Time per character</strong></p>
+<li>
+<p><strong>Time per character</strong></p>
 <ul>
 <li>Set the time duration of each character. The duration of the talk animation will be this time multiplied by the number of characters of the message.</li>
 </ul>
@@ -375,12 +401,14 @@
     <figcaption class="caption">UI model animations</figcaption>
 </figure>
 <ol>
-<li><p><strong>Starter animation</strong></p>
+<li>
+<p><strong>Starter animation</strong></p>
 <ul>
 <li>Select an expression and motion from the lists that will play when starting a chat with the character. You can also add a delay during which the model will be invisible if you need to hide the character for some time to achieve a perfect effect.</li>
 </ul>
 </li>
-<li><p><strong>Default animation</strong></p>
+<li>
+<p><strong>Default animation</strong></p>
 <ul>
 <li>Select an expression and motion from the list that will play when the character sends a message. Use a fallback animation when using the classify expression extension.</li>
 </ul>
@@ -399,12 +427,14 @@
     <figcaption class="caption">UI model mapping</figcaption>
 </figure>
 <ol>
-<li><p><strong>Default click animation</strong></p>
+<li>
+<p><strong>Default click animation</strong></p>
 <ul>
 <li>Select an expression and motion from the list that will play when you click on the model. You can also set a message that will be sent as a user message.</li>
 </ul>
 </li>
-<li><p><strong>Hit areas</strong></p>
+<li>
+<p><strong>Hit areas</strong></p>
 <ul>
 <li>If the model has hit areas, they will be listed, and you can assign an animation/message to each of them.</li>
 </ul>
@@ -423,12 +453,14 @@
     <figcaption class="caption">UI model classify</figcaption>
 </figure>
 <ol>
-<li><p><strong>Requirements</strong></p>
+<li>
+<p><strong>Requirements</strong></p>
 <ul>
 <li>Requires the use of the classify expression extension; otherwise, it will fall back to the default animation.</li>
 </ul>
 </li>
-<li><p><strong>Mapping</strong></p>
+<li>
+<p><strong>Mapping</strong></p>
 <ul>
 <li>For each detected emotion by the classify extension, you can assign an expression/motion animation.</li>
 </ul>
@@ -511,6 +543,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Live2D", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Live2D", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/live2d.md" }</script>
 </body>
 </html>

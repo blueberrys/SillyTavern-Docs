@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>How to Update SillyTavern | docs.ST.app</title>
@@ -16,6 +16,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/installation/updating/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -31,15 +32,18 @@
     <meta name="twitter:title" content="How to Update SillyTavern | docs.ST.app">
     <meta name="twitter:description" content="Find your OS below and follow the instructions to update ST.">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/installation/updating/index.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828224181240" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.831067218304" defer></script>
 
     <style>
         a {
@@ -200,9 +204,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="how-to-update-sillytavern">How to Update SillyTavern</h1>
 <p>Find your OS below and follow the instructions to update ST.</p>
@@ -254,7 +260,8 @@ Alternatively, if the command prompt gives you problems (and you have GitHub Des
 <li>Download the new release zip.</li>
 <li>Unzip it into a folder OUTSIDE of your current ST installation.</li>
 <li>Do the usual setup procedure for your OS to install NodeJS requirements.</li>
-<li><p>Copy the following files/folders as necessary(*) from your old ST installation:</p>
+<li>
+<p>Copy the following files/folders as necessary(*) from your old ST installation:</p>
 <p>(*) &#x27;As necessary&#x27; = &quot;If you made any custom content related to those folders&quot;.</p>
 <h4 id="updating-1120">Updating &gt;=1.12.0</h4>
 <p>Copy the <code translate="no" v-pre>/data</code> directory and <code translate="no" v-pre>config.yaml</code> file from one installation to another. If you have server-wide extensions (installed for &quot;All users&quot;) that you want to preserve, also copy the <code translate="no" v-pre>/public/scripts/extensions/third-party</code> directory.</p>
@@ -262,7 +269,8 @@ Alternatively, if the command prompt gives you problems (and you have GitHub Des
 <p>1.12.0 includes an automated migration procedure. The steps below are required <em>only</em> if the migration was interrupted or errored.</p>
 </li>
 <li>Run the updated server install at least once to create the <code translate="no" v-pre>/data/default-user</code> directory.</li>
-<li><p>Transfer the files from old <code translate="no" v-pre>/public</code> to new <code translate="no" v-pre>/data/default-user</code> as necessary.</p>
+<li>
+<p>Transfer the files from old <code translate="no" v-pre>/public</code> to new <code translate="no" v-pre>/data/default-user</code> as necessary.</p>
 <p>None of the folders are mandatory, so only copy what you need.</p>
 <p><strong>NOTE: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER</strong></p>
 <p>Doing so could break the new install and prevent new features from being present.</p>
@@ -419,6 +427,6 @@ to update volume mappings for the new data model introduced in 1.12.0</p>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Updating", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Updating", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/installation/updating/index.md" }</script>
 </body>
 </html>

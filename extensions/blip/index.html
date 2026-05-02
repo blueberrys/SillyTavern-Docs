@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Blip | docs.ST.app</title>
     <meta name="title" content="Blip | docs.ST.app">
-    <meta name="description" content="This guide will walk you through setting up and customizing blip extension for your SillyTavern experience. This extension animates the text of messages">
+    <meta name="description" content="This guide will walk you through setting up and customizing blip extension for your SillyTavern experience. This extension animates the text of messages with variable speed and plays sound along the animation.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/blip/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/blip/">
     <meta property="og:title" content="Blip | docs.ST.app">
-    <meta property="og:description" content="This guide will walk you through setting up and customizing blip extension for your SillyTavern experience. This extension animates the text of messages">
+    <meta property="og:description" content="This guide will walk you through setting up and customizing blip extension for your SillyTavern experience. This extension animates the text of messages with variable speed and plays sound along the animation.">
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
@@ -29,16 +30,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/blip/">
     <meta name="twitter:title" content="Blip | docs.ST.app">
-    <meta name="twitter:description" content="This guide will walk you through setting up and customizing blip extension for your SillyTavern experience. This extension animates the text of messages">
+    <meta name="twitter:description" content="This guide will walk you through setting up and customizing blip extension for your SillyTavern experience. This extension animates the text of messages with variable speed and plays sound along the animation.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/extensions/blip.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -199,9 +203,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="blip">Blip</h1>
 <p>This guide will walk you through setting up and customizing blip extension for your SillyTavern experience. This extension animates the text of messages with variable speed and plays sound along the animation. You can use an audio file or generate the sound.</p>
@@ -213,24 +219,28 @@
 </ul>
 <h2 id="blip-global-settings">Blip global settings</h2>
 <ol>
-<li><p><strong>Blip user message</strong>:</p>
+<li>
+<p><strong>Blip user message</strong>:</p>
 <ul>
 <li>Enable checkbox to play animation on user message.</li>
 <li>Set a profile for the user or a default profile if you want blip animation for user.</li>
 </ul>
 </li>
-<li><p><strong>Blip only for certain text</strong>:</p>
+<li>
+<p><strong>Blip only for certain text</strong>:</p>
 <ul>
 <li>Enable checkbox to only blip for text inside quotes.</li>
 <li>Enable checkbox to ignore everything inside asterisks.</li>
 </ul>
 </li>
-<li><p><strong>Automatic scroll down</strong>:</p>
+<li>
+<p><strong>Automatic scroll down</strong>:</p>
 <ul>
 <li>Enable checkbox to make the chat go down to follow the text animation, disable it if you want to scroll freely during animation.</li>
 </ul>
 </li>
-<li><p><strong>Audio volume</strong></p>
+<li>
+<p><strong>Audio volume</strong></p>
 <ul>
 <li>Mute the audio if just the animation of the text is desired.</li>
 <li>You can adjust the global volume of blip audio.</li>
@@ -244,7 +254,8 @@
 <li>If only the current chat characters are shown in the list, click the checkbox to show all your characters.</li>
 </ul>
 <ol>
-<li><p><strong>Select the character to assign/update profile</strong>:</p>
+<li>
+<p><strong>Select the character to assign/update profile</strong>:</p>
 <ul>
 <li>Select a character. If it has a profile, it will be loaded.</li>
 <li>If it does not have a profile yet the current parameters will become his profile settings.</li>
@@ -252,26 +263,30 @@
 <li>Use refresh button if your character does not appear in the list.</li>
 </ul>
 </li>
-<li><p><strong>Text animation settings</strong>:</p>
+<li>
+<p><strong>Text animation settings</strong>:</p>
 <ul>
 <li>Set the text speed: the delay in milliseconds between each letter printed.</li>
 <li>Set Min/max speed multiplier different to 1.0 for randomness of speed animation.</li>
 <li>Set comma/phrase delay superior to 0 to add a pause when special characters are printed, can add more liveliness to animation. Audio is paused too in this case.</li>
 </ul>
 </li>
-<li><p><strong>Audio parameters</strong>:</p>
+<li>
+<p><strong>Audio parameters</strong>:</p>
 <ul>
 <li>Set a volume multiplier that will only affect this voice profile if needed.</li>
 <li>Set audio speed: the delay between each blip sound, independent of text speed.</li>
 </ul>
 </li>
-<li><p><strong>Blip origin: Generated sound</strong>:</p>
+<li>
+<p><strong>Blip origin: Generated sound</strong>:</p>
 <ul>
 <li>Use the min/max frequency slider to customize the blip sound played.</li>
 <li>If min/max are different a random sound in this range is played each time.</li>
 </ul>
 </li>
-<li><p><strong>Blip origin: file</strong>:</p>
+<li>
+<p><strong>Blip origin: file</strong>:</p>
 <ul>
 <li>Choose a file in the list.</li>
 <li>You can get official ST blip assets from the assets extension menu.</li>
@@ -353,6 +368,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Blip", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Blip", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/blip.md" }</script>
 </body>
 </html>

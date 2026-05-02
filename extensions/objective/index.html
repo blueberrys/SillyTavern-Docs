@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Objective | docs.ST.app</title>
     <meta name="title" content="Objective | docs.ST.app">
-    <meta name="description" content="The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step">
+    <meta name="description" content="The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step tasks.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/objective/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/objective/">
     <meta property="og:title" content="Objective | docs.ST.app">
-    <meta property="og:description" content="The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step">
+    <meta property="og:description" content="The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step tasks.">
     <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/objective-panel.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -33,18 +34,21 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/objective/">
     <meta name="twitter:title" content="Objective | docs.ST.app">
-    <meta name="twitter:description" content="The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step">
+    <meta name="twitter:description" content="The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step tasks.">
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/objective-panel.png">
     <meta name="twitter:image:alt" content="Objective | docs.ST.app">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/extensions/objective.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -205,9 +209,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="objective">Objective</h1>
 <h3 id="what-is-it">What is it?</h3>
@@ -227,22 +233,27 @@
 </figure>
 <h3 id="configuration">Configuration</h3>
 <ul>
-<li><p>The extension is found in the Extensions menu under Objective.</p>
+<li>
+<p>The extension is found in the Extensions menu under Objective.</p>
 </li>
-<li><p>Type an objective into the top text box, then click on <code translate="no" v-pre>Auto-Generate Tasks</code>. This sends a request to the connected API and asks it to provide  a list of tasks which match the objective you have typed in.</p>
+<li>
+<p>Type an objective into the top text box, then click on <code translate="no" v-pre>Auto-Generate Tasks</code>. This sends a request to the connected API and asks it to provide  a list of tasks which match the objective you have typed in.</p>
 </li>
 </ul>
 <p><em>Note: Clicking Auto-Generate Tasks will delete all existing tasks for the currently selected Objective before adding new ones.</em></p>
 <ul>
-<li><p>Upon receiving the response from the AI, a list of tasks will be created automatically in the space below the Objective input box. Tasks can be edited after creation.</p>
+<li>
+<p>Upon receiving the response from the AI, a list of tasks will be created automatically in the space below the Objective input box. Tasks can be edited after creation.</p>
 </li>
-<li><p>At the bottom of the panel are two boxes: <code translate="no" v-pre>Position in Chat</code> and <code translate="no" v-pre>Task Check Frequency</code></p>
+<li>
+<p>At the bottom of the panel are two boxes: <code translate="no" v-pre>Position in Chat</code> and <code translate="no" v-pre>Task Check Frequency</code></p>
 <ul>
 <li><code translate="no" v-pre>Position in Chat</code> - This is how &#x27;deep&#x27; in the chat section of the prompt you want the current task to be inserted. The lower the number, the more attention the AI will give to the task. Setting to 0 will make the task the primary thing in the AI&#x27;s mind. Setting at high values will put the task in the background and allow the AI to focus on the conversation at hand, but setting it too high may cause the AI to never &#x27;get around&#x27; to the task at all.</li>
 <li><code translate="no" v-pre>Task Check Frequency</code> - This is how often you want the AI to check if the task has been completed. If it is set to <code translate="no" v-pre>3</code>, the AI will be asked if the current task has been completed every 3rd message.</li>
 </ul>
 </li>
-<li><p>Objectives, tasks, and their descriptions are saved in real-time to the current chat session. Custom prompts are saved globally.</p>
+<li>
+<p>Objectives, tasks, and their descriptions are saved in real-time to the current chat session. Custom prompts are saved globally.</p>
 </li>
 </ul>
 <h3 id="custom-prompts">Custom Prompts</h3>
@@ -351,6 +362,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Objective", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Objective", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/objective.md" }</script>
 </body>
 </html>

@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Personas | docs.ST.app</title>
     <meta name="title" content="Personas | docs.ST.app">
-    <meta name="description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive">
+    <meta name="description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive text.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/personas/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/personas/">
     <meta property="og:title" content="Personas | docs.ST.app">
-    <meta property="og:description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive">
+    <meta property="og:description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive text.">
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
@@ -29,16 +30,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/personas/">
     <meta name="twitter:title" content="Personas | docs.ST.app">
-    <meta name="twitter:description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive">
+    <meta name="twitter:description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive text.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/usage/personas.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -199,9 +203,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="personas">Personas</h1>
 <h2 id="what-is-a-persona">What is a Persona?</h2>
@@ -252,7 +258,7 @@
     </div>
 </div>
 <h2 id="persona-description">Persona Description</h2>
-<p>Each persona can store a custom text description — mental and physical traits, age, occupation, or any personal details. These can also include template macros such as <code translate="no" v-pre>{{char}}</code> or <code translate="no" v-pre>{{user}}</code> (see <a href="/usage/characters/macros.md">Macros</a>).</p>
+<p>Each persona can store a custom text description — mental and physical traits, age, occupation, or any personal details. These can also include template macros such as <code translate="no" v-pre>{{char}}</code> or <code translate="no" v-pre>{{user}}</code> (see <a href="../macros/">Macros</a>).</p>
 <p>Where your persona description is injected into the AI prompt depends on the <strong>Position</strong> setting in the Persona Management panel:</p>
 <ul>
 <li><strong>None (disabled)</strong></li>
@@ -301,17 +307,20 @@ If multiple personas are linked to the same character, you&#x27;ll see a popup a
 <h2 id="global-persona-settings">Global Persona Settings</h2>
 <p>All settings under the <strong>Current Persona</strong> are saved per-persona. A few global settings exist too, those can be found under <strong>Global Persona Settings</strong> in the Persona Management panel.</p>
 <ol>
-<li><p><strong>Show notifications on switching personas</strong></p>
+<li>
+<p><strong>Show notifications on switching personas</strong></p>
 <ul>
 <li>Enables persona-related toast messages (e.g., &quot;Persona Auto Selected&quot;, &quot;Temporary Persona&quot;).</li>
 </ul>
 </li>
-<li><p><strong>Allow multiple persona connections per character</strong></p>
+<li>
+<p><strong>Allow multiple persona connections per character</strong></p>
 <ul>
 <li>When <strong>enabled</strong>, you can link multiple personas to a single character. Opening that character&#x27;s chat will prompt you which persona to use. If disabled, only one persona can be connected to a character at a time.</li>
 </ul>
 </li>
-<li><p><strong>Auto-lock a chosen persona to the chat</strong></p>
+<li>
+<p><strong>Auto-lock a chosen persona to the chat</strong></p>
 <ul>
 <li>When <strong>enabled</strong>, any time you select a persona (manually or by auto-selection) or create a new chat, it locks that persona to the chat.<br />
 This combined with &quot;Allow multiple&quot; provides the option to have a persona selection per character, but keep it bound once chosen for a chat.</li>
@@ -439,6 +448,6 @@ This combined with &quot;Allow multiple&quot; provides the option to have a pers
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Personas", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Personas", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/personas.md" }</script>
 </body>
 </html>

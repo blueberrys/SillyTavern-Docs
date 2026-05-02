@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Regex | docs.ST.app</title>
     <meta name="title" content="Regex | docs.ST.app">
-    <meta name="description" content="The Regex extension lets the user automatically detect specific patterns in a string of text (called 'sequences') and apply manipulations (replacements) to">
+    <meta name="description" content="The Regex extension lets the user automatically detect specific patterns in a string of text (called 'sequences') and apply manipulations (replacements) to them.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/regex/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/regex/">
     <meta property="og:title" content="Regex | docs.ST.app">
-    <meta property="og:description" content="The Regex extension lets the user automatically detect specific patterns in a string of text (called 'sequences') and apply manipulations (replacements) to">
+    <meta property="og:description" content="The Regex extension lets the user automatically detect specific patterns in a string of text (called 'sequences') and apply manipulations (replacements) to them.">
     <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/regex-listview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -33,18 +34,21 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/regex/">
     <meta name="twitter:title" content="Regex | docs.ST.app">
-    <meta name="twitter:description" content="The Regex extension lets the user automatically detect specific patterns in a string of text (called 'sequences') and apply manipulations (replacements) to">
+    <meta name="twitter:description" content="The Regex extension lets the user automatically detect specific patterns in a string of text (called 'sequences') and apply manipulations (replacements) to them.">
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/regex-listview.png">
     <meta name="twitter:image:alt" content="Regex | docs.ST.app">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/extensions/regex.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -205,9 +209,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="regex">Regex</h1>
 <h2 id="what-is-it">What is it?</h2>
@@ -215,13 +221,17 @@
 <h2 id="helpful-links">Helpful Links</h2>
 <p><strong>This document will not explain the process of writing a RegEx sequence in depth. There are many online resources to assist you with that.</strong></p>
 <ul>
-<li><p><a href="https://regexr.com">https://regexr.com</a></p>
+<li>
+<p><a href="https://regexr.com">https://regexr.com</a></p>
 </li>
-<li><p><a href="https://regex101.com">https://regex101.com</a></p>
+<li>
+<p><a href="https://regex101.com">https://regex101.com</a></p>
 </li>
-<li><p><a href="https://extendsclass.com/regex-tester.html">https://extendsclass.com/regex-tester.html</a></p>
+<li>
+<p><a href="https://extendsclass.com/regex-tester.html">https://extendsclass.com/regex-tester.html</a></p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/Regular_expression">https://en.wikipedia.org/wiki/Regular_expression</a></p>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Regular_expression">https://en.wikipedia.org/wiki/Regular_expression</a></p>
 </li>
 </ul>
 <h2 id="prerequisites">Prerequisites</h2>
@@ -258,23 +268,31 @@
     <figcaption class="caption">RegEx Editor</figcaption>
 </figure>
 <ul>
-<li><p><strong>Test Mode</strong> : This will open a comparison view at the top of the editor. Type some text into the &#x27;Input&#x27; box, and the results of your RegEx script will be shown in the Output box. It is a valuable debug tool as it will update the Output box in real time as you make changes to the script settings.</p>
+<li>
+<p><strong>Test Mode</strong> : This will open a comparison view at the top of the editor. Type some text into the &#x27;Input&#x27; box, and the results of your RegEx script will be shown in the Output box. It is a valuable debug tool as it will update the Output box in real time as you make changes to the script settings.</p>
 </li>
-<li><p><strong>Name</strong> : The label for the script shown on the extension&#x27;s script list. <strong>This is also used to target the script when triggering it via slash command or STscript.</strong></p>
+<li>
+<p><strong>Name</strong> : The label for the script shown on the extension&#x27;s script list. <strong>This is also used to target the script when triggering it via slash command or STscript.</strong></p>
 </li>
-<li><p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of <a href="/usage/characters/macros.md">common SillyTavern macros</a> (such as {{user}}, {{char}}, etc) if the &#x27;Macros in Find Regex&#x27; is set to do so (see below).</p>
+<li>
+<p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of <a href="../../usage/core-concepts/macros/">common SillyTavern macros</a> (such as {{user}}, {{char}}, etc) if the &#x27;Macros in Find Regex&#x27; is set to do so (see below).</p>
 </li>
-<li><p><strong>Replace With</strong>: This is what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code translate="no" v-pre>apple</code>, and your &#x27;Replace With&#x27; is <code translate="no" v-pre>orange</code>, the first occurrence of &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
+<li>
+<p><strong>Replace With</strong>: This is what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code translate="no" v-pre>apple</code>, and your &#x27;Replace With&#x27; is <code translate="no" v-pre>orange</code>, the first occurrence of &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
 <ul>
-<li><p>Adding the extension-specific macro {{match}} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if **{{match}}** were put into the &#x27;Replace With&#x27; box instead, all occurrences of the word &#x27;apple&#x27; would be replaced with <code translate="no" v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
+<li>
+<p>Adding the extension-specific macro {{match}} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if **{{match}}** were put into the &#x27;Replace With&#x27; box instead, all occurrences of the word &#x27;apple&#x27; would be replaced with <code translate="no" v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
 </li>
-<li><p>Variables such as $1, $2, $3 etc can be used to insert what are called &#x27;Capture Groups&#x27;. These are substrings located in the text sequence matched by the &#x27;Find Regex&#x27; sequence. <strong>Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.</strong> Refer to the links at the top for reference on how to set up Capture Groups.</p>
+<li>
+<p>Variables such as $1, $2, $3 etc can be used to insert what are called &#x27;Capture Groups&#x27;. These are substrings located in the text sequence matched by the &#x27;Find Regex&#x27; sequence. <strong>Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.</strong> Refer to the links at the top for reference on how to set up Capture Groups.</p>
 </li>
 </ul>
 </li>
-<li><p><strong>Trim Out</strong> : text put in this box will be removed from the matched text sequence before the &#x27;Replace With&#x27; process is applied. For example, if our match was &#x27;apple&#x27;, and the Trim Out box contains &#x27;le&#x27;, then the letters &#x27;le&#x27; would be removed first before the &#x27;Replace With&#x27; process is applied. Since our &#x27;Replace With&#x27; box contains **{{match}}** it would result in <code translate="no" v-pre>**app**</code> being put in as the replacement for &#x27;apple&#x27; (first &#x27;le&#x27; is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.</p>
+<li>
+<p><strong>Trim Out</strong> : text put in this box will be removed from the matched text sequence before the &#x27;Replace With&#x27; process is applied. For example, if our match was &#x27;apple&#x27;, and the Trim Out box contains &#x27;le&#x27;, then the letters &#x27;le&#x27; would be removed first before the &#x27;Replace With&#x27; process is applied. Since our &#x27;Replace With&#x27; box contains **{{match}}** it would result in <code translate="no" v-pre>**app**</code> being put in as the replacement for &#x27;apple&#x27; (first &#x27;le&#x27; is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.</p>
 </li>
-<li><p><strong>Affects</strong> : This list of checkboxes defines the text sources to which the RegEx script will be applied.</p>
+<li>
+<p><strong>Affects</strong> : This list of checkboxes defines the text sources to which the RegEx script will be applied.</p>
 <ul>
 <li>&#x27;User Input&#x27;: script will be run against the contents of the user&#x27;s typed input after they hit Send.</li>
 <li>&#x27;AI Response&#x27;: script will be run against the contents of the AI&#x27;s response after it is received.</li>
@@ -284,13 +302,15 @@
 <li><strong>If everything here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STscript.</strong></li>
 </ul>
 </li>
-<li><p><strong>Other Options</strong> :</p>
+<li>
+<p><strong>Other Options</strong> :</p>
 <ul>
 <li>&#x27;Disabled&#x27; prevents the script from running. This is used as an override to prevent the script from running when you simply don&#x27;t want to change any of the script&#x27;s settings and/or don&#x27;t want to disable it entirely via the switch on the script list (as doing so would prevent slash commands from triggering it).</li>
 <li>&#x27;Run on Edit&#x27; makes the script also run after a chat message has been edited. If this is unchecked, the contents of edited chat messages will not trigger the script.</li>
 </ul>
 </li>
-<li><p><strong>Macros in Find Regex</strong> : Select whether or not to replace macros (such as {{user}}, {{char}}, etc) that are present in the Find Regex box&#x27;s sequence.</p>
+<li>
+<p><strong>Macros in Find Regex</strong> : Select whether or not to replace macros (such as {{user}}, {{char}}, etc) that are present in the Find Regex box&#x27;s sequence.</p>
 <ul>
 <li>&#x27;Don&#x27;t Substitute&#x27; will cause any SillyTavern macros to be ignored so the RegEx script will treat them literally when searching.</li>
 <li>&#x27;Raw&#x27; will send in the value of the macro verbatim. This might alter the way your RegEx script searches the text if the value of the macro contains certain special characters.</li>
@@ -301,7 +321,8 @@
 <h3 id="depth-settings">Depth Settings</h3>
 <p>The Min/Max Depth settings provide precise control over which messages in the chat history your regex pattern will affect:</p>
 <ul>
-<li><p><strong>Min Depth</strong>: Only affects messages that are at least N levels deep in the chat history</p>
+<li>
+<p><strong>Min Depth</strong>: Only affects messages that are at least N levels deep in the chat history</p>
 <ul>
 <li>0 = last message</li>
 <li>1 = second-to-last message</li>
@@ -309,7 +330,8 @@
 <li>When blank (set to &#x27;Unlimited&#x27;), or -1, will also affect the message to continue on the Continue action</li>
 </ul>
 </li>
-<li><p><strong>Max Depth</strong>: Only affects messages no deeper than N levels in the chat history</p>
+<li>
+<p><strong>Max Depth</strong>: Only affects messages no deeper than N levels in the chat history</p>
 <ul>
 <li>Must be greater than Min Depth for the regex to apply</li>
 <li>System prompts and utility prompts are not affected by these settings</li>
@@ -413,6 +435,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Regex", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Regex", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/regex.md" }</script>
 </body>
 </html>

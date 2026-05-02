@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Internationalization (i18n) | docs.ST.app</title>
@@ -16,6 +16,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/for-contributors/i18n/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.sillytavern.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -37,15 +38,18 @@
     <meta name="twitter:image" content="https://docs.sillytavern.app/static/i18n/generate-image-pre.png">
     <meta name="twitter:image:alt" content="Internationalization (i18n) | docs.ST.app">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.sillytavern.app/for_contributors/i18n.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828224181240" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.831067218304" defer></script>
 
     <style>
         a {
@@ -206,9 +210,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="internationalization-i18n">Internationalization (i18n)</h1>
 <p>SillyTavern supports multiple languages. This guide explains how to add and manage translations.</p>
@@ -507,13 +513,15 @@ repo: <a href="https://github.com/SillyTavern/Extension-PromptInspector/pull/1">
 <h2 id="how-translations-work">How translations work</h2>
 <p>There are two ways translations are used in the application:</p>
 <ol>
-<li><p><strong>HTML Elements</strong>: Using <code translate="no" v-pre>data-i18n</code> attributes</p>
+<li>
+<p><strong>HTML Elements</strong>: Using <code translate="no" v-pre>data-i18n</code> attributes</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;div data-i18n=&quot;some_key&quot;&gt;Default Text&lt;/div&gt;</code></pre>
 </doc-codeblock></div>
 <p>The default text in the HTML will be replaced with the translated text if available.</p>
 </li>
-<li><p><strong>Template Strings</strong>: In the JavaScript code using the <code translate="no" v-pre>t</code> function</p>
+<li>
+<p><strong>Template Strings</strong>: In the JavaScript code using the <code translate="no" v-pre>t</code> function</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">t`Some text with ${variable}`</code></pre>
 </doc-codeblock></div>
@@ -610,12 +618,12 @@ openrouter.ai&quot;</li>
 <h3 id="dynamic-text">Dynamic Text</h3>
 <p>For dynamic text in JavaScript code, translations use either:</p>
 <ol>
-<li><p>Template literals with the <code translate="no" v-pre>t</code> function:</p>
+<li>Template literals with the <code translate="no" v-pre>t</code> function:
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">toastr.warn(t`Tag ${tagName} not found.`);</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Direct translation function:</p>
+<li>Direct translation function:
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">translate(&quot;Some text&quot;, &quot;optional_key&quot;)</code></pre>
 </doc-codeblock></div>
@@ -682,7 +690,8 @@ locale is English, searches all other locales.</p>
 <h2 id="adding-a-new-language">Adding a new language</h2>
 <p>To add support for a new language:</p>
 <ol>
-<li><p>Add your language to <code translate="no" v-pre>public/locales/lang.json</code>:</p>
+<li>
+<p>Add your language to <code translate="no" v-pre>public/locales/lang.json</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
   &quot;lang&quot;: &quot;xx-xx&quot;,
@@ -690,7 +699,8 @@ locale is English, searches all other locales.</p>
 }</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Create <code translate="no" v-pre>public/locales/xx-xx.json</code> with your translations</p>
+<li>
+<p>Create <code translate="no" v-pre>public/locales/xx-xx.json</code> with your translations</p>
 </li>
 </ol>
 <h2 id="contributing">Contributing</h2>
@@ -772,6 +782,6 @@ locale is English, searches all other locales.</p>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Internationalization (i18n)", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Internationalization (i18n)", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/for_contributors/i18n.md" }</script>
 </body>
 </html>
