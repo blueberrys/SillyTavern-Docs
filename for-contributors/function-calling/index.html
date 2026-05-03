@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831138445909">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831138445909" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831138445909" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.831067218304" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831138445909" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.831138445909" defer></script>
 
     <style>
         a {
@@ -229,12 +229,23 @@
 </ol>
 <h2 id="prerequisites-and-limitations">Prerequisites and limitations</h2>
 <ol>
-<li>This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Groq, Cohere, OpenRouter, AI21, Google AI Studio, Google Vertex AI, DeepSeek, AI/ML API, NanoGPT and Custom API sources.</li>
+<li>This feature is only available for Chat Completion API, supported by the following sources: Custom (OpenAI-compatible), AI/ML API, AI21, Azure OpenAI, Chutes, Claude, Cloudflare Workers AI, Cohere, DeepSeek, Electron Hub, Fireworks, Google AI Studio, Google Vertex AI, Groq, MiniMax, MistralAI, Moonshot (Kimi), NanoGPT, OpenAI, OpenRouter, Pollinations, SiliconFlow, xAI (Grok), and Z.AI (GLM).</li>
 <li>Text Completion APIs don&#x27;t support function calls, but some locally-hosted backends like Ollama and TabbyAPI may run in Custom OpenAI-compatible mode under Chat Completion.</li>
 <li>The support for function calling must be explicitly allowed by the user first. This is done by enabling the &quot;Enable function calling&quot; option in the AI Response Configuration panel.</li>
 <li>There is no guarantee that an LLM will perform any function calls at all. Most of them require an explicit &quot;activation&quot; through the prompt (e.g., the user asking to &quot;Roll a dice&quot;, &quot;Get the weather&quot;, etc.).</li>
 <li>Not all prompts can trigger a tool call. Continuations, impersonation, background (&#x27;quiet&#x27;) prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.</li>
+<li>Certain models may not support function calling, even if the API source does. Please refer to your API provider&#x27;s documentation for details on which models support function calling.</li>
 </ol>
+<h2 id="tool-calling-recursion-limit">Tool calling recursion limit</h2>
+<p>To prevent infinite loops of tool calls, there is a recursion limit (default: 5 rounds). If the LLM keeps calling tools repeatedly, execution will stop after the limit is reached. You can adjust this limit in the AI response configuration settings, next to the &quot;Enable function calling&quot; option.</p>
+<h2 id="interleaved-thinking">Interleaved Thinking</h2>
+<p>When using tool calling with a <a href="../../usage/prompts/reasoning/">reasoning model</a>, you can leverage reasoning returned together with tool-call requests to maintain interleaved thinking context. For some models, this is necessary to ensure consistency and preserve important details between tool calls.</p>
+<p>Choose one of the following settings in the AI response configuration:</p>
+<ul>
+<li>Disabled: No reasoning context is included in tool-call requests. Highest compatibility, default setting.</li>
+<li>Since Last User Message: Include reasoning for any tool turns that happened after the latest user message.</li>
+<li>Active Tool Chain: Include reasoning only while still inside the current unresolved tool loop; once a normal assistant reply is produced, old tool-chain reasoning is no longer resent.</li>
+</ul>
 <h2 id="how-to-make-a-function-tool">How to make a function tool</h2>
 <h3 id="check-if-the-feature-is-supported">Check if the feature is supported</h3>
 <p>Use <code translate="no" v-pre>isToolCallingSupported()</code> from <code translate="no" v-pre>SillyTavern.getContext()</code> to check if the current API supports function tool calling and if it&#x27;s enabled in the settings:</p>

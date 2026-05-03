@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831138445909">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../favicon.ico" />
-    <link href="../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.5.3.831138445909" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.5.3.831138445909" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.5.3.831138445909" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -243,6 +243,41 @@
 <div class="callout"><p><strong><a href="../usage/st-reverse-proxy-guide/">Reverse proxying</a></strong></p>
 <p>Enthusiasts can set up a reverse proxy to access their SillyTavern instance from the internet.</p>
 </div>
+<h2 id="data-layout">Data Layout</h2>
+<p>This section provides an overview of the user data storage structure in SillyTavern. Only the default data layout (data root is a subdirectory of the SillyTavern installation directory) is described here. If you have customized the data layout, refer to your custom configuration for details.</p>
+<h3 id="datauser-handle-eg-datadefault-user"><code translate="no" v-pre>data/[user-handle]</code> (e.g. <code translate="no" v-pre>data/default-user</code>)</h3>
+<p>Created for each user account, this folder contains user-specific data such as character files, conversation history, and settings.</p>
+<h3 id="data_cache"><code translate="no" v-pre>data/_cache</code></h3>
+<p>A storage for files downloaded by the server, such as tokenizer files and transformers.js models.</p>
+<h4 id="data_cachecharacters"><code translate="no" v-pre>data/_cache/characters</code></h4>
+<p>Contains parsed character data when the <code translate="no" v-pre>performance.useDiskCache</code> setting is enabled, synchronized on startup and when characters are updated.</p>
+<p>This allows for faster loading of character data at the cost of disk space.</p>
+<h3 id="data_css"><code translate="no" v-pre>data/_css</code></h3>
+<p>A storage for custom CSS files.</p>
+<p>Currently, only the <code translate="no" v-pre>user.css</code> file is supported, which allows you to add custom styles to the frontend.</p>
+<h3 id="data_errors"><code translate="no" v-pre>data/_errors</code></h3>
+<p>A storage of HTML files containing error pages for various HTTP status codes. These files are used to display custom error pages when the server encounters errors.</p>
+<ul>
+<li><code translate="no" v-pre>forbidden-by-whitelist.html</code>: Displayed when a request is blocked by the IP address whitelist.</li>
+<li><code translate="no" v-pre>host-not-allowed.html</code>: Displayed when a request is blocked by the host whitelist.</li>
+<li><code translate="no" v-pre>unauthorized.html</code>: Displayed when the basic authentication fails.</li>
+<li><code translate="no" v-pre>url-not-found.html</code>: Displayed when a requested resource is not found.</li>
+</ul>
+<h3 id="data_storage"><code translate="no" v-pre>data/_storage</code></h3>
+<p>A storage for <a href="multi-user/">user account data</a>.</p>
+<p>Editing these files manually is not recommended and can lead to data corruption.</p>
+<h3 id="data_uploads"><code translate="no" v-pre>data/_uploads</code></h3>
+<p>A temporary storage for files uploaded by users, while they are being processed by the server.</p>
+<p>These files are automatically cleared on every startup.</p>
+<h3 id="data_webpack"><code translate="no" v-pre>data/_webpack</code></h3>
+<p>A storage for compiled webpack assets and cache files.</p>
+<p>If you experience issues with the frontend after an update, try clearing this folder to force a full rebuild of the frontend assets.</p>
+<h3 id="dataaccesslog"><code translate="no" v-pre>data/access.log</code></h3>
+<p>A log file that records incoming HTTP requests to the server, after the first successful connection.</p>
+<p>Inspect this file regularly to monitor for any suspicious activity.</p>
+<h3 id="datacookie-secrettxt"><code translate="no" v-pre>data/cookie-secret.txt</code></h3>
+<p>Contains the secret key used for signing cookies in the server.</p>
+<p>This file is automatically generated on the first startup if it doesn&#x27;t exist.</p>
 <h2 id="security-checklist">Security checklist</h2>
 <p><strong>These are just recommendations. Please consult a web application security specialist before making your ST instance live.</strong></p>
 <ol>
@@ -255,6 +290,7 @@
 <li>Check the access logs often. They are written to the server console and to the <code translate="no" v-pre>access.log</code> file and provide information about incoming connections, such as IP address and user agent.</li>
 <li>Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a reverse-proxy web server such as <a href="https://traefik.io/">Traefik</a> or <a href="https://caddyserver.com/docs/getting-started">Caddy</a>.</li>
 <li>Configure and enable <a href="config-yaml/#host-whitelisting">host whitelisting</a>, especially if you&#x27;re not using HTTPS encryption on a local network.</li>
+<li>Configure and enable <a href="config-yaml/#private-address-whitelisting">private address whitelisting</a> to prevent SSRF attacks.</li>
 </ol>
 <p>Find more information about secure proxying in the following guide: <a href="../usage/st-reverse-proxy-guide/">Reverse Proxying SillyTavern</a>.</p>
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831067218304">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831138445909">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.831067218304" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.831138445909" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.831138445909" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.831067218304" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.831138445909" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -290,7 +290,7 @@
 </ul>
 <h3 id="by-parsing">By Parsing</h3>
 <p>Enable &quot;Auto-Parse&quot; in the <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> panel to automatically parse reasoning from the model&#x27;s output.</p>
-<p>The response must contain a reasoning section wrapped in configured Prefix and Suffix sequences. The sequences provided by default correspond to the DeepSeek R1 reasoning format.</p>
+<p>The response must contain a reasoning section wrapped in configured Prefix and Suffix sequences. The sequences provided by default correspond to the DeepSeek R1 reasoning format. This is required to be enabled for some API sources that return unparsed reasoning, such as MiniMax or Perplexity.</p>
 <p>Example with prefix <code translate="no" v-pre>&lt;think&gt;</code> and suffix <code translate="no" v-pre>&lt;/think&gt;</code>:</p>
 <div id="by-parsing-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">&lt;think&gt;
@@ -416,9 +416,12 @@ Incomplete reasoning...</code></pre>
 </table>
 </div>
 <ul>
-<li>For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.</li>
-<li>Claude also supports adaptive thinking for Opus 4.6+ models, which can be enabled via <code translate="no" v-pre>claude.enableAdaptiveThinking</code> in <a href="../../../administration/config-yaml/">config.yaml</a>. When enabled, the Reasoning Effort setting maps to adaptive thinking levels instead of token budgets.</li>
-<li>For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.</li>
+<li>For older Claude models that don&#x27;t support adaptive thinking, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.</li>
+<li>Claude also supports adaptive thinking for Opus 4.6+ models, which can be enabled via <code translate="no" v-pre>claude.enableAdaptiveThinking</code> in <a href="../../../administration/config-yaml/">config.yaml</a> (always on for Opus 4.7+). When enabled, the Reasoning Effort setting maps to adaptive thinking levels instead of token budgets. This setting takes precedence over the &quot;Verbosity&quot; setting for applicable models.</li>
+<li>For OpenRouter, Pollinations, Perplexity, xAI, Chutes, DeepSeek, AI/ML API, xAI, Electron Hub, only an OpenAI-style keyword is sent.</li>
+<li>For GPT-5.4 and GPT-5.5 models on OpenAI, &quot;Minimal&quot; reasoning effort corresponds to &quot;none&quot;, which disables reasoning.</li>
+<li>For KoboldCpp running as a Chat Completion Custom API source, reasoning effort is sent as a <code translate="no" v-pre>reasoning_effort</code> parameter with values &quot;minimal&quot;, &quot;low&quot;, &quot;medium&quot;, &quot;high&quot;, and &quot;xhigh&quot;.</li>
+<li>For other Custom (OpenAI-compatible) sources, a reasoning effort is sent only if the model supports it on the official OpenAI source.</li>
 </ul>
 <p>Google AI Studio and Vertex AI are as follows:</p>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -463,7 +466,7 @@ Incomplete reasoning...</code></pre>
 <td>lower of max or 24576</td>
 </tr>
 <tr>
-<td>3.0 Pro</td>
+<td>3.0/3.1 Pro</td>
 <td>thinkingLevel = null</td>
 <td>&quot;low&quot;</td>
 <td>&quot;low&quot;</td>
@@ -472,7 +475,7 @@ Incomplete reasoning...</code></pre>
 <td>&quot;high&quot;</td>
 </tr>
 <tr>
-<td>3.0 Flash</td>
+<td>3.0/3.1 Flash</td>
 <td>thinkingLevel = null</td>
 <td>&quot;minimal&quot;</td>
 <td>&quot;low&quot;</td>
