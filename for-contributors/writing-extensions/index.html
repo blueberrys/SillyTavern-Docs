@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831138445909">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831149570726">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.831138445909" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.831149570726" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831138445909" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831149570726" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831138445909" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.831138445909" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831149570726" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.831149570726" defer></script>
 
     <style>
         a {
@@ -807,6 +807,10 @@ function handleIncomingMessage(data) {
 <p><strong>Persona:</strong></p>
 <ul>
 <li><code translate="no" v-pre>PERSONA_CHANGED</code>: the active persona has been changed.</li>
+<li><code translate="no" v-pre>PERSONA_CREATED</code>: a new persona has been created.</li>
+<li><code translate="no" v-pre>PERSONA_UPDATED</code>: a persona has been updated.</li>
+<li><code translate="no" v-pre>PERSONA_RENAMED</code>: a persona has been renamed.</li>
+<li><code translate="no" v-pre>PERSONA_DELETED</code>: a persona has been deleted.</li>
 </ul>
 <p><strong>Settings and presets:</strong></p>
 <ul>
@@ -936,6 +940,10 @@ await eventSource.emit(eventType, { data: 'custom event data' });</code></pre>
 <td><code translate="no" v-pre>disable</code></td>
 <td>Before the extension is disabled and settings are saved</td>
 </tr>
+<tr>
+<td><code translate="no" v-pre>clean</code></td>
+<td>When a user clicks the &quot;Clean extension data&quot; button in the extension manager, or chooses an option to clean when deleting the extension</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -952,7 +960,8 @@ await eventSource.emit(eventType, { data: 'custom event data' });</code></pre>
         &quot;delete&quot;: &quot;onDelete&quot;,
         &quot;enable&quot;: &quot;onEnable&quot;,
         &quot;disable&quot;: &quot;onDisable&quot;,
-        &quot;activate&quot;: &quot;onActivate&quot;
+        &quot;activate&quot;: &quot;onActivate&quot;,
+        &quot;clean&quot;: &quot;onClean&quot;
     }
 }</code></pre>
 </doc-codeblock></div>
@@ -990,6 +999,11 @@ export function onEnable() {
 
 export function onDisable() {
     console.log('Extension disabled');
+}
+
+export async function onClean() {
+    console.log('Extension data cleaned');
+    // e.g., cleanup of the extension's data here
 }</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
