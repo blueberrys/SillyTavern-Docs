@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.831149570726">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.831149570726" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.831149570726" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.831149570726" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.831149570726" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832450154317" defer></script>
 
     <style>
         a {
@@ -1229,6 +1229,176 @@ registerMacro('tomorrow', () =&gt; {
 // Unregister
 unregisterMacro('fizz');</code></pre>
 </doc-codeblock></div>
+<h2 id="message-formatting-hooks">Message formatting hooks</h2>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Staging Feature</h5>
+<p>This is currently only available on the <code translate="no" v-pre>staging</code> branch of SillyTavern, and not part of the latest release.</p>
+        </div>
+    </div>
+</div>
+<p>Extensions can hook into the message formatting pipeline to transform message text before it reaches the DOM. This is useful for adding annotations (ruby tags, tooltips), highlighting, or custom text transformations.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Hooks run synchronously and <strong>must return a string</strong>. Async functions and non-string returns will throw a <code translate="no" v-pre>TypeError</code> at registration time or be silently ignored at runtime with a console warning. Do not perform expensive operations in these hooks — they run on every message render.</p>
+        </div>
+    </div>
+</div>
+<h3 id="pipeline-stages">Pipeline stages</h3>
+<p>Hooks can be registered for three pipeline stages. All stages run <strong>before</strong> DOMPurify sanitization, so output is always safe:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Stage</th>
+<th>When it runs</th>
+<th>Text format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>beforeRegex</code></td>
+<td>After prompt-bias stripping, before custom regex rules</td>
+<td>Plain text</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>afterRegex</code></td>
+<td>After custom regex rules, before Markdown conversion</td>
+<td>Plain text</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>afterMarkdown</code></td>
+<td>After Markdown-to-HTML conversion (showdown), before DOMPurify</td>
+<td>HTML string</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <code translate="no" v-pre>afterMarkdown</code> stage is the default and the most common insertion point for extensions that want to annotate rendered HTML.</p>
+<h3 id="registering-a-hook">Registering a hook</h3>
+<p>Access the <code translate="no" v-pre>messageFormatter</code> from <code translate="no" v-pre>getContext()</code>:</p>
+<div id="registering-a-hook-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { messageFormatter } = SillyTavern.getContext();
+
+// Simple hook - transforms message text
+messageFormatter.addHook((mes, ctx) =&gt; {
+    // Skip user messages
+    if (ctx.isUser) return mes;
+
+    // Add furigana to Japanese text
+    return addFurigana(mes);
+});
+
+// Hook with explicit stage and order
+messageFormatter.addHook((mes, ctx) =&gt; {
+    // Transform after Markdown conversion but before sanitization
+    return mes.replace(/\*\*(.+?)\*\*/g, '&lt;mark&gt;$1&lt;/mark&gt;');
+}, {
+    stage: messageFormatter.stage.AFTER_MARKDOWN,
+    order: messageFormatter.order.EARLY,
+});</code></pre>
+</doc-codeblock></div>
+<h3 id="hook-context">Hook context</h3>
+<p>The hook receives an immutable context object with message metadata:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>characterName</code></td>
+<td><code translate="no" v-pre>string</code></td>
+<td>Character name associated with the message</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>isSystem</code></td>
+<td><code translate="no" v-pre>boolean</code></td>
+<td>Whether the message is a system message</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>isUser</code></td>
+<td><code translate="no" v-pre>boolean</code></td>
+<td>Whether the message was sent by the user</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>messageId</code></td>
+<td><code translate="no" v-pre>number</code></td>
+<td>Index of the message in the chat array, or <code translate="no" v-pre>-1</code> for transient messages (streaming previews)</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>isReasoning</code></td>
+<td><code translate="no" v-pre>boolean</code></td>
+<td>Whether the message is reasoning/thinking output</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>stage</code></td>
+<td><code translate="no" v-pre>string</code></td>
+<td>The pipeline stage currently being executed</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The context object is frozen with <code translate="no" v-pre>Object.freeze()</code> — attempting to modify it will have no effect.</p>
+<h3 id="hook-ordering">Hook ordering</h3>
+<p>Hooks within a stage run in ascending order. Use the <code translate="no" v-pre>order</code> option to control execution order:</p>
+<div id="hook-ordering-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { hook_order } = messageFormatter;
+
+// Predefined constants
+hook_order.EARLIEST;  // 0
+hook_order.EARLY;     // 10
+hook_order.NORMAL;    // 50 (default)
+hook_order.LATE;      // 90
+hook_order.LATEST;    // 100
+
+// Custom numeric value
+messageFormatter.addHook(myHook, { order: 25 });</code></pre>
+</doc-codeblock></div>
+<p>Lower numbers run first. This is useful when multiple extensions transform the same text — for example, one extension might extract data early, and another might format it later.</p>
+<h3 id="error-handling">Error handling</h3>
+<p>Hook execution is wrapped in try/catch. If a hook throws, it is skipped and a console error is logged — the pipeline continues with the remaining hooks.</p>
+<p>If a hook returns a non-string value (including <code translate="no" v-pre>undefined</code> or a <code translate="no" v-pre>Promise</code>), a console warning is emitted and the return value is ignored. The pipeline continues with the previous text unchanged.</p>
+<h3 id="full-pipeline-order">Full pipeline order</h3>
+<p>For reference, the complete message formatting pipeline is:</p>
+<ol>
+<li>Prompt-bias stripping (message 0 only)</li>
+<li>Comment / hidden-message normalization</li>
+<li><code translate="no" v-pre>beforeRegex</code> extension hooks</li>
+<li>Custom regex rules (<code translate="no" v-pre>getRegexedString</code>)</li>
+<li><code translate="no" v-pre>afterRegex</code> extension hooks</li>
+<li>Markdown auto-fix (<code translate="no" v-pre>fixMarkdown</code>)</li>
+<li>HTML tag encoding (<code translate="no" v-pre>encode_tags</code>)</li>
+<li>Showdown Markdown → HTML conversion</li>
+<li><code translate="no" v-pre>afterMarkdown</code> extension hooks</li>
+<li>Name-prefix stripping (<code translate="no" v-pre>allow_name2_display</code>)</li>
+<li>DOMPurify sanitization</li>
+</ol>
+<p>All extension hooks (steps 3, 5, 9) run <strong>before</strong> DOMPurify so their output is always sanitized.</p>
 <h2 id="function-tool-calling">Function tool calling</h2>
 <p>Extensions can register custom function tools that the LLM can invoke during chat completion. This lets your extension react to structured data from the model — for example, querying APIs, performing calculations, or triggering extension features.</p>
 <p>For a full guide including prerequisites, supported APIs, registration fields, and tips, see the dedicated <a href="../function-calling/">Function Calling</a> page.</p>
